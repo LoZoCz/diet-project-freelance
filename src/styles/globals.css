@@ -1,0 +1,140 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+    --background: 142.1 100% 95%;
+    --foreground: 142.1 5% 0%;
+    --card: 142.1 50% 90%;
+    --card-foreground: 142.1 5% 10%;
+    --popover: 142.1 100% 95%;
+    --popover-foreground: 142.1 100% 0%;
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 142.1 30% 70%;
+    --secondary-foreground: 0 0% 0%;
+    --muted: 104.1 30% 85%;
+    --muted-foreground: 142.1 5% 35%;
+    --accent: 104.1 30% 80%;
+    --accent-foreground: 142.1 5% 10%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: 142.1 5% 90%;
+    --border: 142.1 30% 50%;
+    --input: 142.1 30% 18%;
+    --ring: 142.1 76.2% 36.3%;
+    --radius: 0.5rem;
+
+    --header-h: calc(80px + 2rem);
+    --sect-h: calc(100dvh - var(--header-h));
+}
+
+.dark {
+    --background: 142.1 50% 5%;
+    --foreground: 142.1 5% 90%;
+    --card: 142.1 50% 0%;
+    --card-foreground: 142.1 5% 90%;
+    --popover: 142.1 50% 5%;
+    --popover-foreground: 142.1 5% 90%;
+    --primary: 142.1 76.2% 36.3%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 142.1 30% 10%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 104.1 30% 15%;
+    --muted-foreground: 142.1 5% 60%;
+    --accent: 104.1 30% 15%;
+    --accent-foreground: 142.1 5% 90%;
+    --destructive: 0 100% 30%;
+    --destructive-foreground: 142.1 5% 90%;
+    --border: 142.1 30% 18%;
+    --input: 142.1 30% 18%;
+    --ring: 142.1 76.2% 36.3%;
+    --radius: 0.5rem;
+}
+
+body {
+    /* @apply pt-[var(--header-h)]; */
+
+    * {
+        @apply box-border;
+    }
+}
+
+@property --angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
+@property --sec-color {
+    syntax: '<color>';
+    inherits: false;
+    initial-value: rgba(52, 211, 153, 1);
+}
+
+@keyframes rotate-bg {
+    0% {
+        --angle: 0deg;
+    }
+    100% {
+        --angle: 360deg;
+    }
+}
+
+.custom-border {
+    &:hover::after {
+        animation: rotate-bg 3s linear infinite;
+        --sec-color: rgba(167, 243, 208, 1);
+    }
+
+    &::after {
+        content: '';
+        position: absolute;
+        inset: -2px;
+        background: conic-gradient(
+            from var(--angle) at 50% 50%,
+            rgba(52, 211, 153, 1) 0%,
+            var(--sec-color) 25%,
+            rgba(52, 211, 153, 1) 50%,
+            var(--sec-color) 75%,
+            rgba(52, 211, 153, 1) 100%
+        );
+        border-radius: calc(1.5rem + 2px);
+        z-index: -1;
+        transition:
+            --angle 0.2s ease-in-out,
+            --sec-color 0.2s ease-in-out;
+    }
+}
+
+.gradient-img {
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+            180deg,
+            transparent 0%,
+            rgba(52, 211, 153, 1) 100%
+        );
+    }
+}
+
+.after-hero {
+    position: relative;
+    z-index: 1;
+
+    &::after {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: hsla(164, 86%, 16%, 0.6);
+        filter: blur(10px);
+        z-index: -1;
+    }
+}
