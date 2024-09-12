@@ -23,6 +23,7 @@ const config = {
                 laptop: '1024px',
                 tablet: '900px',
                 mobile: '640px',
+                'sm-mobile': '515px',
             },
             colors: {
                 border: 'hsl(var(--border))',

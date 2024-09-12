@@ -1,25 +1,14 @@
 import { PiCheese, PiCarrot } from 'react-icons/pi'
-import { TbApple, TbMeat } from 'react-icons/tb'
-import { IoLogoInstagram, IoLogoFacebook, IoMail } from 'react-icons/io5'
-
-export const badgeArr = [
-    {
-        label: 'Porady żywieniowe',
-        href: '/blog/porady',
-    },
-    {
-        label: 'Plany posiłków',
-        href: '/blog/plany',
-    },
-    {
-        label: 'Zdrowe przepisy',
-        href: '/blog/przepisy',
-    },
-    {
-        label: 'Zmiany stylu życia',
-        href: '/blog/zycie',
-    },
-]
+import { TbMeat } from 'react-icons/tb'
+import {
+    IoLogoInstagram,
+    IoLogoFacebook,
+    IoMail,
+    IoPersonOutline,
+    IoNewspaperOutline,
+    IoHomeOutline,
+    IoCalculatorOutline,
+} from 'react-icons/io5'
 
 export const cardContent = [
     {
@@ -83,18 +72,28 @@ export const faqContent = [
 export const pageLinks = [
     {
         label: 'Strona główna',
+        icon: <IoHomeOutline className="sm-mobile:block mr-2 hidden size-6" />,
         href: '/',
     },
     {
         label: 'O mnie',
+        icon: (
+            <IoPersonOutline className="sm-mobile:block mr-2 hidden size-6" />
+        ),
         href: '/about',
     },
     {
         label: 'Kalkulator kaloryczny',
+        icon: (
+            <IoCalculatorOutline className="sm-mobile:block mr-2 hidden size-6" />
+        ),
         href: '/calc',
     },
     {
         label: 'Blog',
+        icon: (
+            <IoNewspaperOutline className="sm-mobile:block mr-2 hidden size-6" />
+        ),
         href: '/blog',
     },
 ]

@@ -52,8 +52,6 @@
 }
 
 body {
-    /* @apply pt-[var(--header-h)]; */
-
     * {
         @apply box-border;
     }
