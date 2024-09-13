@@ -1,29 +1,39 @@
-import { HTMLProps, ReactNode } from 'react'
+import { LinkProps } from 'next/link'
+import { AnchorHTMLAttributes, HTMLProps, ReactNode } from 'react'
 
-export interface HeadingProps extends HTMLProps<HTMLHeadingElement> {
+export type HeadingProps = HTMLProps<HTMLHeadingElement> & {
     children: string | ReactNode
 }
 
-export interface ParaProps extends HTMLProps<HTMLParagraphElement> {
+export type ParaProps = HTMLProps<HTMLParagraphElement> & {
     children: string | ReactNode
 }
 
-export interface ListProps extends HTMLProps<HTMLUListElement> {
+export type ListProps = HTMLProps<HTMLUListElement> & {
     children: ReactNode
 }
 
-export interface ListEleProps extends HTMLProps<HTMLLIElement> {
+export type ListEleProps = HTMLProps<HTMLLIElement> & {
     children: string | ReactNode
 }
 
-export interface LargeProps extends HTMLProps<HTMLEmbedElement> {
+export type LargeProps = HTMLProps<HTMLEmbedElement> & {
     children: string | ReactNode
 }
 
-export interface SmallProps extends HTMLProps<HTMLSpanElement> {
+export type SmallProps = HTMLProps<HTMLSpanElement> & {
     children: string | ReactNode
 }
 
-export interface BlockquoteProps extends HTMLProps<HTMLQuoteElement> {
+export type BlockquoteProps = HTMLProps<HTMLQuoteElement> & {
     children: string | ReactNode
+}
+
+export type InternalLinkProps = LinkProps & {
+    children: ReactNode
+    className?: string
+}
+
+export type ExternalLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
+    children: ReactNode
 }

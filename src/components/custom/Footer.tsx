@@ -1,12 +1,11 @@
 import { FC } from 'react'
 import Logo from './Logo'
 import { pageLinks as footerLinks, socialsContact } from '@/lib/defaultValues'
-import Link from 'next/link'
-import { P } from './typography'
+import { ExternalLink, InternalLink, P } from './typography'
 
 const Footer: FC = () => {
     return (
-        <footer className="tablet:justify-between tablet:items-start flex w-full flex-wrap items-center justify-center gap-8 bg-secondary p-8 text-secondary-foreground">
+        <footer className="flex w-full flex-wrap items-center justify-center gap-8 bg-secondary p-8 text-secondary-foreground tablet:items-start tablet:justify-between">
             <Logo withName logoSize={64} />
             <div className="flex flex-wrap gap-12">
                 <div className="space-y-4">
@@ -14,12 +13,9 @@ const Footer: FC = () => {
                     <ul className="flex items-center gap-4">
                         {socialsContact.map((link, id) => (
                             <li key={id}>
-                                <Link
-                                    className="text-md font-medium"
-                                    href={link.href}
-                                >
+                                <ExternalLink href={link.href}>
                                     {link.icon}
-                                </Link>
+                                </ExternalLink>
                             </li>
                         ))}
                     </ul>
@@ -29,12 +25,9 @@ const Footer: FC = () => {
                     <ul className="flex flex-col gap-2">
                         {footerLinks.map((link, id) => (
                             <li key={id}>
-                                <Link
-                                    className="text-md font-medium"
-                                    href={link.href}
-                                >
+                                <InternalLink href={link.href}>
                                     {link.label}
-                                </Link>
+                                </InternalLink>
                             </li>
                         ))}
                     </ul>

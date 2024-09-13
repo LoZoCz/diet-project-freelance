@@ -1,6 +1,8 @@
 import {
     BlockquoteProps,
+    ExternalLinkProps,
     HeadingProps,
+    InternalLinkProps,
     LargeProps,
     ListEleProps,
     ListProps,
@@ -8,6 +10,7 @@ import {
     SmallProps,
 } from '@/lib/typoraphyTypes'
 import { cn } from '@/lib/utils'
+import Link from 'next/link'
 
 export function H1({ children, className, ...props }: HeadingProps) {
     return (
@@ -92,9 +95,9 @@ export function ListEle({ children, className, ...props }: ListEleProps) {
 
 export function Large({ children, className, ...props }: LargeProps) {
     return (
-        <em {...props} className={cn('text-lg font-semibold', className)}>
+        <strong {...props} className={cn('text-lg font-semibold', className)}>
             {children}
-        </em>
+        </strong>
     )
 }
 
@@ -117,5 +120,47 @@ export function Blockquote({ children, className, ...props }: BlockquoteProps) {
         >
             {children}
         </blockquote>
+    )
+}
+
+export const InternalLink: React.FC<InternalLinkProps> = ({
+    href,
+    children,
+    className,
+    ...props
+}) => {
+    return (
+        <Link
+            {...props}
+            href={href}
+            className={cn(
+                'rounded-md font-medium text-foreground underline underline-offset-4 ring-offset-transparent transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+                className
+            )}
+        >
+            {children}
+        </Link>
+    )
+}
+
+export const ExternalLink: React.FC<ExternalLinkProps> = ({
+    href,
+    children,
+    className,
+    ...props
+}) => {
+    return (
+        <a
+            {...props}
+            href={href}
+            target="_blank"
+            rel="noopener noreferrer"
+            className={cn(
+                'rounded-md font-medium text-foreground underline underline-offset-4 ring-offset-transparent transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50',
+                className
+            )}
+        >
+            {children}
+        </a>
     )
 }

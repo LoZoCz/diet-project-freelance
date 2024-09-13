@@ -84,6 +84,9 @@ const config = {
                 section: 'var(--sect-h)',
                 header: 'var(--header-h)',
             },
+            minHeight: {
+                section: 'var(--sect-h)',
+            },
             fontFamily: {
                 sans: ['var(--font-sans)', ...fontFamily.sans],
             },
