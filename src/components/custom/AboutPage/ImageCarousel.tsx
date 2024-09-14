@@ -10,7 +10,7 @@ import {
 
 export function ImageCarousel() {
     return (
-        <Carousel className="w-full">
+        <Carousel className="w-full px-0 tablet:px-7">
             <CarouselContent>
                 {Array.from({ length: 5 }).map((_, index) => (
                     <CarouselItem key={index}>
@@ -22,8 +22,10 @@ export function ImageCarousel() {
                     </CarouselItem>
                 ))}
             </CarouselContent>
-            <CarouselPrevious />
-            <CarouselNext />
+            <CarouselPrevious className="hidden tablet:flex" />
+            <CarouselNext className="hidden tablet:flex" />
         </Carousel>
     )
 }
+
+// create small dots that indicates which slide is currently active

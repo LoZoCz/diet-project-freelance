@@ -6,7 +6,7 @@ import abousSecImg from '@/../public/about-sect-img.jpg'
 
 const AboutSection: FC = () => {
     return (
-        <section className="mx-auto flex max-w-main flex-col items-center justify-center gap-12 px-4 tablet:flex-row">
+        <section className="container flex flex-col items-center justify-center gap-12 px-4 tablet:flex-row">
             <div className="flex justify-center">
                 <Image
                     src={abousSecImg}

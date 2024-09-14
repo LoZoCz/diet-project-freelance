@@ -29,7 +29,7 @@ const Header: FC = () => {
             <nav className="flex">
                 <ul
                     className={cn(
-                        'absolute left-4 right-4 top-[102%] grid grid-cols-1 grid-rows-4 items-center gap-8 rounded-md bg-popover p-2 shadow-md outline outline-1 outline-primary sm-mobile:grid-cols-2 sm-mobile:grid-rows-2 tablet:static tablet:flex tablet:bg-transparent tablet:shadow-none tablet:outline-none',
+                        'absolute left-4 right-4 top-[102%] grid grid-cols-1 grid-rows-4 items-center gap-4 rounded-md bg-popover p-2 shadow-md outline outline-1 outline-primary sm-mobile:grid-cols-2 sm-mobile:grid-rows-2 tablet:static tablet:flex tablet:gap-8 tablet:bg-transparent tablet:shadow-none tablet:outline-none',
                         open ? 'grid' : 'hidden'
                     )}
                 >
@@ -38,6 +38,7 @@ const Header: FC = () => {
                             <Button
                                 asChild
                                 variant="default"
+                                onClick={() => toggleNavbar()}
                                 className={cn(
                                     'w-full bg-transparent hover:text-primary-foreground',
                                     (pathname !== '/' && 'text-foreground') ||

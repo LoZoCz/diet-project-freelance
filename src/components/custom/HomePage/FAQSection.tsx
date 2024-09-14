@@ -10,12 +10,12 @@ import { faqContent } from '@/lib/defaultValues'
 
 const FAQSection: FC = () => {
     return (
-        <section className="mx-auto max-w-main space-y-6 px-4">
+        <section className="container space-y-6 px-4">
             <H4 className="text-center text-5xl">Pomocne pytania</H4>
             <Accordion type="single" defaultValue="item-1" className="w-full">
                 {faqContent.map((faq, id) => (
                     <AccordionItem value={`item-${id + 1}`} key={id}>
-                        <AccordionTrigger className="tablet:text-left text-center text-4xl">
+                        <AccordionTrigger className="text-center text-4xl tablet:text-left">
                             {faq.title}
                         </AccordionTrigger>
                         <AccordionContent className="text-lg">

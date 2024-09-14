@@ -5,7 +5,7 @@ import { cardContent } from '@/lib/defaultValues'
 
 const CardSection: FC = () => {
     return (
-        <section className="tablet:flex-row mx-auto flex w-full max-w-main flex-col place-items-center gap-6 px-4">
+        <section className="container flex w-full flex-col place-items-center gap-6 px-4 tablet:flex-row">
             {cardContent.map((card, id) => (
                 <CardElement key={id}>
                     {card.icon}
@@ -34,7 +34,7 @@ const CardElement: FC<CardElementProps> = ({
         <div
             {...props}
             className={cn(
-                'custom-border tablet:min-h-[25rem] relative flex flex-1 flex-col items-center justify-center gap-6 rounded-3xl bg-emerald-100 p-6',
+                'custom-border relative flex flex-1 flex-col items-center justify-center gap-6 rounded-3xl bg-emerald-100 p-6 tablet:min-h-[25rem]',
                 className
             )}
         >

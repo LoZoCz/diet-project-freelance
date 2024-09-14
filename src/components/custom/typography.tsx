@@ -17,7 +17,7 @@ export function H1({ children, className, ...props }: HeadingProps) {
         <h1
             {...props}
             className={cn(
-                'scroll-m-20 text-4xl font-extrabold tracking-tight lg:text-5xl',
+                'scroll-m-20 text-4xl font-extrabold tracking-tight text-foreground lg:text-5xl',
                 className
             )}
         >
@@ -31,7 +31,7 @@ export function H2({ children, className, ...props }: HeadingProps) {
         <h2
             {...props}
             className={cn(
-                'scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight first:mt-0',
+                'scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight text-foreground first:mt-0',
                 className
             )}
         >
@@ -45,7 +45,7 @@ export function H3({ children, className, ...props }: HeadingProps) {
         <h3
             {...props}
             className={cn(
-                'scroll-m-20 text-2xl font-semibold tracking-tight',
+                'scroll-m-20 text-2xl font-semibold tracking-tight text-foreground',
                 className
             )}
         >
@@ -59,7 +59,7 @@ export function H4({ children, className, ...props }: HeadingProps) {
         <h4
             {...props}
             className={cn(
-                'scroll-m-20 text-xl font-semibold tracking-tight',
+                'scroll-m-20 text-xl font-semibold tracking-tight text-foreground',
                 className
             )}
         >
@@ -71,15 +71,16 @@ export function H4({ children, className, ...props }: HeadingProps) {
 export function P({ children, className, ...props }: ParaProps) {
     // somethign u can use in para: [&:not(:first-child)]:mt-6
     return (
-        <p {...props} className={cn('leading-7', className)}>
+        <p {...props} className={cn('leading-7 text-foreground', className)}>
             {children}
         </p>
     )
 }
 
 export function List({ children, className, ...props }: ListProps) {
+    // somethign u can use in list: my-6 ml-6
     return (
-        <ul {...props} className="my-6 ml-6 list-disc [&>li]:mt-2">
+        <ul {...props} className="ml-6 list-disc [&>li]:mt-2">
             {children}
         </ul>
     )
@@ -87,7 +88,7 @@ export function List({ children, className, ...props }: ListProps) {
 
 export function ListEle({ children, className, ...props }: ListEleProps) {
     return (
-        <li {...props} className={cn('', className)}>
+        <li {...props} className={cn('text-foreground', className)}>
             {children}
         </li>
     )
@@ -95,7 +96,10 @@ export function ListEle({ children, className, ...props }: ListEleProps) {
 
 export function Large({ children, className, ...props }: LargeProps) {
     return (
-        <strong {...props} className={cn('text-lg font-semibold', className)}>
+        <strong
+            {...props}
+            className={cn('text-lg font-semibold text-foreground', className)}
+        >
             {children}
         </strong>
     )
@@ -105,7 +109,10 @@ export function Small({ children, className, ...props }: SmallProps) {
     return (
         <small
             {...props}
-            className={cn('text-sm font-medium leading-none', className)}
+            className={cn(
+                'text-sm font-medium leading-none text-foreground',
+                className
+            )}
         >
             {children}
         </small>
@@ -116,7 +123,10 @@ export function Blockquote({ children, className, ...props }: BlockquoteProps) {
     return (
         <blockquote
             {...props}
-            className={cn('mt-6 border-l-2 pl-6 italic', className)}
+            className={cn(
+                'mt-6 border-l-2 pl-6 italic text-foreground',
+                className
+            )}
         >
             {children}
         </blockquote>
