@@ -27,11 +27,13 @@ export function H1({ children, className, ...props }: HeadingProps) {
 }
 
 export function H2({ children, className, ...props }: HeadingProps) {
+    // somethign u can use in H2: border-b
+
     return (
         <h2
             {...props}
             className={cn(
-                'scroll-m-20 border-b pb-2 text-3xl font-semibold tracking-tight text-foreground first:mt-0',
+                'scroll-m-20 pb-2 text-3xl font-semibold tracking-tight text-foreground first:mt-0',
                 className
             )}
         >

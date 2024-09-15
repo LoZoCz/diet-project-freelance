@@ -92,6 +92,7 @@ const config = {
             },
             maxWidth: {
                 main: '1400px',
+                blog: '850px',
             },
             backgroundImage: {
                 'hero-image': "url('../../public/vege-img.jpg')",
