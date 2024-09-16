@@ -1,3 +1,4 @@
+import { BlockContent } from '@/sanity/types'
 import { LinkProps } from 'next/link'
 import { AnchorHTMLAttributes, HTMLProps, ReactNode } from 'react'
 
@@ -37,3 +38,5 @@ export type InternalLinkProps = LinkProps & {
 export type ExternalLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
     children: ReactNode
 }
+
+export type FormatterProps = { value: BlockContent; className?: string }

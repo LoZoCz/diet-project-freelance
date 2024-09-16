@@ -15,7 +15,6 @@ const Header: FC = () => {
 
     const toggleNavbar = () => {
         setOpen(!open)
-        console.log('Toggled navbar:', open)
     }
 
     return (

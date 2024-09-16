@@ -1,4 +1,4 @@
-import { FC, HTMLProps } from 'react'
+import { FC } from 'react'
 import Image from 'next/image'
 import iconImg from '@/../public/icon/iconImage.png'
 import { cn } from '@/lib/utils'

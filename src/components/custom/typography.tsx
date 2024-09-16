@@ -1,6 +1,7 @@
 import {
     BlockquoteProps,
     ExternalLinkProps,
+    FormatterProps,
     HeadingProps,
     InternalLinkProps,
     LargeProps,
@@ -10,7 +11,10 @@ import {
     SmallProps,
 } from '@/lib/typoraphyTypes'
 import { cn } from '@/lib/utils'
+import { PortableText, PortableTextComponents } from 'next-sanity'
+import Image from 'next/image'
 import Link from 'next/link'
+import { imagesUrl } from '@/lib/imagesUrl'
 
 export function H1({ children, className, ...props }: HeadingProps) {
     return (
@@ -27,13 +31,13 @@ export function H1({ children, className, ...props }: HeadingProps) {
 }
 
 export function H2({ children, className, ...props }: HeadingProps) {
-    // somethign u can use in H2: border-b
+    // somethign u can use in H2: pb-2 border-b
 
     return (
         <h2
             {...props}
             className={cn(
-                'scroll-m-20 pb-2 text-3xl font-semibold tracking-tight text-foreground first:mt-0',
+                'scroll-m-20 text-3xl font-semibold tracking-tight text-foreground first:mt-0',
                 className
             )}
         >
@@ -100,10 +104,18 @@ export function Large({ children, className, ...props }: LargeProps) {
     return (
         <strong
             {...props}
-            className={cn('text-lg font-semibold text-foreground', className)}
+            className={cn('font-semibold text-foreground', className)}
         >
             {children}
         </strong>
+    )
+}
+
+export function Italic({ children, className, ...props }: LargeProps) {
+    return (
+        <span {...props} className={cn('italic text-foreground', className)}>
+            {children}
+        </span>
     )
 }
 
@@ -126,7 +138,7 @@ export function Blockquote({ children, className, ...props }: BlockquoteProps) {
         <blockquote
             {...props}
             className={cn(
-                'mt-6 border-l-2 pl-6 italic text-foreground',
+                'mt-6 border-l-2 border-primary bg-primary/15 pl-6 italic text-foreground',
                 className
             )}
         >
@@ -176,3 +188,50 @@ export const ExternalLink: React.FC<ExternalLinkProps> = ({
         </a>
     )
 }
+
+// export const SanityImage = ({ asset }) => {
+//     console.log(asset)
+//     const img = imagesUrl(asset._ref, 56, 56)
+
+//     return (
+//         <Image
+//             src="https://via.placeholder.com/300x300"
+//             alt={asset.altText || 'image'}
+//             width={300}
+//             height={300}
+//         />
+//     )
+// }
+
+const textSerializers: PortableTextComponents = {
+    block: {
+        h1: ({ children }) => <H1>{children}</H1>,
+        h2: ({ children }) => <H2>{children}</H2>,
+        h3: ({ children }) => <H3>{children}</H3>,
+        normal: (props) => <P>{props.children}</P>,
+        blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
+    },
+    marks: {
+        link: ({ children, value }) => (
+            <ExternalLink href={value.href}>{children}</ExternalLink>
+        ),
+        strong: ({ children }) => <Large>{children}</Large>,
+        italic: ({ children }) => <Italic>{children}</Italic>,
+    },
+    list: {
+        bullet: ({ children }) => <List>{children}</List>,
+    },
+    // types: {
+    //     image: ({ value }) => <SanityImage asset={value} />,
+    // },
+}
+
+const Formatter = ({ value, className }: FormatterProps) => {
+    return (
+        <article className={cn('space-y-4', className)}>
+            <PortableText value={value} components={textSerializers} />
+        </article>
+    )
+}
+
+export default Formatter
