@@ -13,7 +13,7 @@ import {
     SelectValue,
 } from '@/components/ui/select'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { H1, H2, Large, P } from '@/components/custom/typography'
+import { H1, H2, Large, P } from '@/components/custom/Typography'
 
 type ActivityLevelTypes =
     | 'sedentary'
@@ -123,9 +123,7 @@ const CalcSection: FC = () => {
                 <div>
                     <div className="space-y-6">
                         <div>
-                            <Label htmlFor="gender" className="mb-2 block">
-                                Płeć
-                            </Label>
+                            <span className="mb-2 block">Płeć</span>
                             <RadioGroup
                                 id="gender"
                                 value={gender}
@@ -152,6 +150,7 @@ const CalcSection: FC = () => {
                                 </Label>
                                 <Input
                                     id="age"
+                                    name="age"
                                     type="text"
                                     value={age}
                                     onChange={(e) => setAge(e.target.value)}
@@ -164,6 +163,7 @@ const CalcSection: FC = () => {
                                 </Label>
                                 <Input
                                     id="height"
+                                    name="height"
                                     type="text"
                                     value={height}
                                     onChange={(e) => setHeight(e.target.value)}
@@ -176,6 +176,7 @@ const CalcSection: FC = () => {
                                 </Label>
                                 <Input
                                     id="weight"
+                                    name="weight"
                                     type="text"
                                     value={weight}
                                     onChange={(e) => setWeight(e.target.value)}
@@ -207,9 +208,9 @@ const CalcSection: FC = () => {
                             </Select>
                         </div>
                         <div>
-                            <Label htmlFor="weight-goal" className="mb-2 block">
+                            <span className="mb-2 block">
                                 Cel dotyczący wagi
-                            </Label>
+                            </span>
                             <Tabs value={weightGoal} onValueChange={changeGoal}>
                                 <TabsList className="grid w-full grid-cols-3">
                                     <TabsTrigger value="lose">
@@ -232,14 +233,9 @@ const CalcSection: FC = () => {
             </div>
             <div className="flex w-full flex-col justify-between tablet:w-1/3">
                 <div className="text-center">
-                    <div className="mb-2">
-                        <H2 className="text-left text-2xl font-bold">
-                            Twoje Wyniki
-                        </H2>
-                    </div>
-                    <P className="mb-4 text-lg">
+                    <H2 className="mb-6 text-2xl font-bold">
                         Twoje dzienne zapotrzebowanie kaloryczne:
-                    </P>
+                    </H2>
                     <div className="relative inline-block">
                         <div className="absolute inset-0 scale-110 transform animate-pulse rounded-full bg-emerald-200"></div>
                         <P className="relative p-1 text-5xl font-bold text-primary">

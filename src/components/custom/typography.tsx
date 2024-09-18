@@ -1,9 +1,7 @@
 import {
     BlockquoteProps,
     ExternalLinkProps,
-    FormatterProps,
     HeadingProps,
-    imgAsset,
     InternalLinkProps,
     LargeProps,
     ListEleProps,
@@ -12,10 +10,7 @@ import {
     SmallProps,
 } from '@/lib/typoraphyTypes'
 import { cn } from '@/lib/utils'
-import { PortableText, PortableTextComponents } from 'next-sanity'
-import Image from 'next/image'
 import Link from 'next/link'
-import { imagesUrl } from '@/lib/imagesUrl'
 
 export function H1({ children, className, ...props }: HeadingProps) {
     return (
@@ -189,50 +184,3 @@ export const ExternalLink: React.FC<ExternalLinkProps> = ({
         </a>
     )
 }
-
-export const SanityImage = ({ image }: { image: imgAsset }) => {
-    const imgSrc = imagesUrl(image.asset._ref)
-
-    return (
-        <Image
-            src={imgSrc || 'https://via.placeholder.com/850x400'}
-            alt="image"
-            width={850}
-            height={400}
-            className=""
-        />
-    )
-}
-
-const textSerializers: PortableTextComponents = {
-    block: {
-        h1: ({ children }) => <H1>{children}</H1>,
-        h2: ({ children }) => <H2>{children}</H2>,
-        h3: ({ children }) => <H3>{children}</H3>,
-        normal: (props) => <P>{props.children}</P>,
-        blockquote: ({ children }) => <Blockquote>{children}</Blockquote>,
-    },
-    marks: {
-        link: ({ children, value }) => (
-            <ExternalLink href={value.href}>{children}</ExternalLink>
-        ),
-        strong: ({ children }) => <Large>{children}</Large>,
-        italic: ({ children }) => <Italic>{children}</Italic>,
-    },
-    list: {
-        bullet: ({ children }) => <List>{children}</List>,
-    },
-    types: {
-        image: ({ value }) => <SanityImage image={value} />,
-    },
-}
-
-const Formatter = ({ value, className }: FormatterProps) => {
-    return (
-        <article className={cn('space-y-4', className)}>
-            <PortableText value={value} components={textSerializers} />
-        </article>
-    )
-}
-
-export default Formatter

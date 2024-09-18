@@ -27,5 +27,3 @@ export function ImageCarousel() {
         </Carousel>
     )
 }
-
-// create small dots that indicates which slide is currently active

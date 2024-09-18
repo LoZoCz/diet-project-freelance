@@ -1,12 +1,12 @@
 import { HTMLProps, FC, ReactNode } from 'react'
-import { H2, P } from '../typography'
+import { H2, P } from '../Typography'
 import { cn } from '@/lib/utils'
-import { cardContent } from '@/lib/defaultValues'
+import { homeContent } from '@/lib/defaultValues'
 
 const CardSection: FC = () => {
     return (
         <section className="container flex w-full flex-col place-items-center gap-6 px-4 tablet:flex-row">
-            {cardContent.map((card, id) => (
+            {homeContent.cards.map((card, id) => (
                 <CardElement key={id}>
                     {card.icon}
                     <div className="z-30">

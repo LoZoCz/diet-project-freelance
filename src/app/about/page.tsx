@@ -3,7 +3,7 @@ import StorySection from '@/components/custom/AboutPage/StorySection'
 import OfferSection from '@/components/custom/AboutPage/OfferSection'
 import JourneySection from '@/components/custom/AboutPage/JourneySection'
 import CertificationSection from '@/components/custom/AboutPage/CertificationSection'
-import FootingSection from '@/components/custom/AboutPage/FootingSection'
+import FooterSection from '@/components/custom/AboutPage/FooterSection'
 
 export default function About() {
     return (
@@ -13,7 +13,7 @@ export default function About() {
             <OfferSection />
             <JourneySection />
             <CertificationSection />
-            <FootingSection />
+            <FooterSection />
         </main>
     )
 }

@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar'
-import { P } from '../typography'
+import { P } from '../Typography'
 import { imagesUrl } from '@/lib/imagesUrl'
 import { prefetchAuthor } from '@/sanity/customTypes'
 

@@ -1,62 +1,60 @@
 import { FC } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
-import { List, ListEle, P } from '../typography'
+import { List, ListEle, P } from '../Typography'
+import { aboutContent } from '@/lib/defaultValues'
 
 const OfferSection: FC = () => {
     return (
         <section className="container">
-            <h2 className="mb-4 text-3xl font-semibold">Co Oferuję</h2>
+            <h2 className="mb-4 text-3xl font-semibold">
+                {aboutContent.offer.title}
+            </h2>
             <Tabs
-                defaultValue="approach"
+                defaultValue={aboutContent.offer.first.value}
                 className="rounded-lg bg-white/50 shadow-md"
             >
                 <TabsList className="grid w-full grid-cols-3">
-                    <TabsTrigger value="approach">Moje Podejście</TabsTrigger>
-                    <TabsTrigger value="services">Usługi</TabsTrigger>
-                    <TabsTrigger value="expertise">Specjalizacje</TabsTrigger>
+                    {aboutContent.offer.tabs.map((tab, index) => (
+                        <TabsTrigger key={index} value={tab.value}>
+                            {tab.title}
+                        </TabsTrigger>
+                    ))}
                 </TabsList>
-                <TabsContent value="approach" className="p-6">
-                    <P>
-                        Wierzę w holistyczne podejście oparte na dowodach
-                        naukowych. U mnie nie znajdziesz modnych diet ani
-                        szybkich rozwiązań! Skupiam się na trwałych zmianach
-                        stylu życia, które odżywią zarówno Twoje ciało, jak i
-                        umysł. Moim celem jest pomóc Ci zbudować pozytywną
-                        relację z jedzeniem, zrozumieć potrzeby swojego
-                        organizmu i osiągnąć długotrwałe rezultaty.
-                    </P>
+                <TabsContent
+                    value={aboutContent.offer.first.value}
+                    className="p-6"
+                >
+                    <P>{aboutContent.offer.first.content}</P>
                 </TabsContent>
-                <TabsContent value="services" className="p-6">
+                <TabsContent
+                    value={aboutContent.offer.second.value}
+                    className="p-6"
+                >
                     <List>
-                        <ListEle>Indywidualne plany żywieniowe</ListEle>
-                        <ListEle>Sesje coachingowe jeden na jeden</ListEle>
-                        <ListEle>Warsztaty grupowe i seminaria</ListEle>
-                        <ListEle>Programy wellness dla firm</ListEle>
-                        <ListEle>Tworzenie przepisów</ListEle>
-                        <ListEle>Przeglądy spiżarni</ListEle>
+                        {aboutContent.offer.second.content.map(
+                            (item, index) => (
+                                <ListEle key={index}>{item}</ListEle>
+                            )
+                        )}
                     </List>
                 </TabsContent>
-                <TabsContent value="expertise" className="p-6">
+                <TabsContent
+                    value={aboutContent.offer.third.value}
+                    className="p-6"
+                >
                     <div className="flex flex-wrap gap-2">
-                        {[
-                            'Kontrola wagi',
-                            'Żywienie sportowców',
-                            'Zarządzanie cukrzycą',
-                            'Zdrowie jelit',
-                            'Intuicyjne jedzenie',
-                            'Dieta roślinna',
-                            'Planowanie posiłków',
-                            'Edukacja żywieniowa',
-                        ].map((skill) => (
-                            <Badge
-                                key={skill}
-                                variant="secondary"
-                                className="bg-green-200"
-                            >
-                                {skill}
-                            </Badge>
-                        ))}
+                        {aboutContent.offer.third.content.map(
+                            (skill, index) => (
+                                <Badge
+                                    key={index}
+                                    variant="secondary"
+                                    className="bg-green-200"
+                                >
+                                    {skill}
+                                </Badge>
+                            )
+                        )}
                     </div>
                 </TabsContent>
             </Tabs>

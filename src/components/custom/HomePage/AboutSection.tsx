@@ -1,9 +1,10 @@
 import { FC } from 'react'
 import { Button } from '../../ui/button'
-import { H3, P } from '../typography'
+import { H3, P } from '../Typography'
 import Image from 'next/image'
 import abousSecImg from '@/../public/about-sect-img.jpg'
 import Link from 'next/link'
+import { homeContent } from '@/lib/defaultValues'
 
 const AboutSection: FC = () => {
     return (
@@ -16,22 +17,10 @@ const AboutSection: FC = () => {
                 />
             </div>
             <div className="space-y-8">
-                <H3 className="text-5xl">Dowiedz się więcej o mnie</H3>
-                <P>
-                    Jestem pasjonatką zdrowego stylu życia i dietetyki, a moim
-                    celem jest wspieranie innych w osiąganiu ich celów
-                    zdrowotnych i sylwetkowych poprzez proste, ale skuteczne
-                    podejście do odżywiania. Wierzę, że kluczem do zdrowia jest
-                    dieta oparta na naturalnych, regionalnych produktach, które
-                    są dostępne na wyciągnięcie ręki. Moje plany żywieniowe są
-                    proste, ale radykalne w swojej skuteczności — eliminuję
-                    zbędne komplikacje, stawiając na prostotę i autentyczność w
-                    kuchni. Każdy zasługuje na zdrowe, smaczne jedzenie, które
-                    dostarcza energii i poprawia samopoczucie, bez zbędnych
-                    udziwnień.
-                </P>
+                <H3 className="text-5xl">{homeContent.about.title}</H3>
+                <P>{homeContent.about.paragraph}</P>
                 <Button asChild>
-                    <Link href="/about">O mnie</Link>
+                    <Link href="/about">{homeContent.about.cta}</Link>
                 </Button>
             </div>
         </section>

@@ -1,5 +1,5 @@
 import { FC, HTMLProps } from 'react'
-import { H2, P } from '../typography'
+import { H2, P } from '../Typography'
 
 type PostTitleProps = HTMLProps<HTMLDivElement> & {
     title: string | null

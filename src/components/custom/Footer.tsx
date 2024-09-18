@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import Logo from './Logo'
 import { pageLinks as footerLinks, socialsContact } from '@/lib/defaultValues'
-import { ExternalLink, InternalLink, P } from './typography'
+import { ExternalLink, InternalLink, P } from './Typography'
 
 const Footer: FC = () => {
     return (

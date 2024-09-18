@@ -1,13 +1,14 @@
 import { FC } from 'react'
-import { H1, P } from '../typography'
+import { H1, P } from '../Typography'
 import Image from 'next/image'
 import abousSecImg from '@/../public/about-sect-img.jpg'
+import { aboutContent } from '@/lib/defaultValues'
 
 const AboutBanner: FC = () => {
     return (
         <section className="container flex flex-col items-center gap-5">
             <H1 className="text-center text-4xl font-bold">
-                Cześć, nazywam się Jane!
+                {aboutContent.title}
             </H1>
             <div className="size-64">
                 <Image
@@ -18,10 +19,7 @@ const AboutBanner: FC = () => {
                     height={250}
                 />
             </div>
-            <P className="text-center text-xl italic">
-                &quot;Niech pożywienie będzie twoim lekarstwem, a lekarstwo
-                pożywieniem.&quot; - Hipokrates
-            </P>
+            <P className="text-center text-xl italic">{aboutContent.quote}</P>
         </section>
     )
 }
