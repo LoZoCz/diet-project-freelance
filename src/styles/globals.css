@@ -51,6 +51,10 @@
     --radius: 0.5rem;
 }
 
+::selection {
+    @apply bg-primary/75 text-background;
+}
+
 body {
     * {
         @apply box-border;

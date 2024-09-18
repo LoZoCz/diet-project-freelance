@@ -3,6 +3,7 @@ import { Button } from '../../ui/button'
 import { H3, P } from '../typography'
 import Image from 'next/image'
 import abousSecImg from '@/../public/about-sect-img.jpg'
+import Link from 'next/link'
 
 const AboutSection: FC = () => {
     return (
@@ -29,7 +30,9 @@ const AboutSection: FC = () => {
                     dostarcza energii i poprawia samopoczucie, bez zbędnych
                     udziwnień.
                 </P>
-                <Button>O mnie</Button>
+                <Button asChild>
+                    <Link href="/about">O mnie</Link>
+                </Button>
             </div>
         </section>
     )

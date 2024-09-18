@@ -16,6 +16,7 @@ const PostImage: FC<PostImageProps> = ({ src, alt, categories, ...props }) => {
                 alt={alt}
                 width={300}
                 height={200}
+                priority
                 className="h-full w-full object-cover transition-all group-hover:scale-110"
             />
             {categories && (

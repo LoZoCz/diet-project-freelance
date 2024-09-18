@@ -5,12 +5,12 @@ import Link from 'next/link'
 
 const HeroSection: FC = () => {
     return (
-        <section className="tablet:flex-row after-hero bg-hero-image flex h-screen w-full flex-col items-center justify-center bg-cover bg-center px-4">
+        <section className="after-hero flex h-screen w-full flex-col items-center justify-center bg-hero-image bg-cover bg-center px-4 tablet:flex-row">
             <div className="flex flex-col items-center justify-center gap-5 py-12">
-                <H1 className="laptop:text-9xl text-center text-6xl text-white">
+                <H1 className="text-center text-6xl text-white laptop:text-9xl">
                     Dieta to nie <span className="text-emerald-400">cud</span>
                 </H1>
-                <P className="tablet:max-w-[65ch] text-center text-lg text-white">
+                <P className="text-center text-lg text-white tablet:max-w-[65ch]">
                     Odkryj, jak zrównoważone odżywianie może zmienić Twoje życie
                     na lepsze. Nie szukaj magicznych rozwiązań – postaw na
                     naukowo udowodnione metody, które przynoszą długotrwałe

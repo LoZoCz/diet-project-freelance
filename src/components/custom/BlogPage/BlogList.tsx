@@ -15,14 +15,16 @@ const BlogList: FC<Props> = ({ posts }) => {
             {posts.map((post, index) => {
                 const { title, slug, categories, mainImage, publishedAt } = post
                 const imageSrc =
-                    (mainImage?.asset &&
-                        imagesUrl(mainImage?.asset?._ref, 300, 200)) ||
-                    'https://via.placeholder.com/300x200'
+                    mainImage?.asset &&
+                    imagesUrl(mainImage.asset._ref, 400, 200)
 
                 return (
                     <PostCard key={index} href={`/blog/${slug?.current}`}>
                         <PostImage
-                            src={imageSrc}
+                            src={
+                                imageSrc ||
+                                'https://via.placeholder.com/400x200'
+                            }
                             alt={slug?.current + '-image' || 'post image'}
                             categories={categories || []}
                         />

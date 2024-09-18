@@ -1,4 +1,4 @@
-import Banner from '@/components/custom/AboutPage/Banner'
+import AboutBanner from '@/components/custom/AboutPage/AboutBanner'
 import StorySection from '@/components/custom/AboutPage/StorySection'
 import OfferSection from '@/components/custom/AboutPage/OfferSection'
 import JourneySection from '@/components/custom/AboutPage/JourneySection'
@@ -8,7 +8,7 @@ import FootingSection from '@/components/custom/AboutPage/FootingSection'
 export default function About() {
     return (
         <main className="space-y-8">
-            <Banner />
+            <AboutBanner />
             <StorySection />
             <OfferSection />
             <JourneySection />

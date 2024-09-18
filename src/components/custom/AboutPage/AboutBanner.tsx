@@ -3,7 +3,7 @@ import { H1, P } from '../typography'
 import Image from 'next/image'
 import abousSecImg from '@/../public/about-sect-img.jpg'
 
-const Banner: FC = () => {
+const AboutBanner: FC = () => {
     return (
         <section className="container flex flex-col items-center gap-5">
             <H1 className="text-center text-4xl font-bold">
@@ -26,4 +26,4 @@ const Banner: FC = () => {
     )
 }
 
-export default Banner
+export default AboutBanner

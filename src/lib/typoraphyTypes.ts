@@ -40,3 +40,12 @@ export type ExternalLinkProps = AnchorHTMLAttributes<HTMLAnchorElement> & {
 }
 
 export type FormatterProps = { value: BlockContent; className?: string }
+
+export type imgAsset = {
+    _type: string
+    _key: string
+    asset: {
+        _ref: string
+        _type: string
+    }
+}

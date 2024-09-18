@@ -3,6 +3,7 @@ import {
     ExternalLinkProps,
     FormatterProps,
     HeadingProps,
+    imgAsset,
     InternalLinkProps,
     LargeProps,
     ListEleProps,
@@ -189,19 +190,19 @@ export const ExternalLink: React.FC<ExternalLinkProps> = ({
     )
 }
 
-// export const SanityImage = ({ asset }) => {
-//     console.log(asset)
-//     const img = imagesUrl(asset._ref, 56, 56)
+export const SanityImage = ({ image }: { image: imgAsset }) => {
+    const imgSrc = imagesUrl(image.asset._ref)
 
-//     return (
-//         <Image
-//             src="https://via.placeholder.com/300x300"
-//             alt={asset.altText || 'image'}
-//             width={300}
-//             height={300}
-//         />
-//     )
-// }
+    return (
+        <Image
+            src={imgSrc || 'https://via.placeholder.com/850x400'}
+            alt="image"
+            width={850}
+            height={400}
+            className=""
+        />
+    )
+}
 
 const textSerializers: PortableTextComponents = {
     block: {
@@ -221,9 +222,9 @@ const textSerializers: PortableTextComponents = {
     list: {
         bullet: ({ children }) => <List>{children}</List>,
     },
-    // types: {
-    //     image: ({ value }) => <SanityImage asset={value} />,
-    // },
+    types: {
+        image: ({ value }) => <SanityImage image={value} />,
+    },
 }
 
 const Formatter = ({ value, className }: FormatterProps) => {
