@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { H2, List, ListEle, P } from '@/components/custom/Typography'
+import { H2, List, ListEle, P } from '@/components/custom/typography'
 import { calcContent } from '@/lib/defaultValues'
 
 const UnderstandingSection: FC = () => {

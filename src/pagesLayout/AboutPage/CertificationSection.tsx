@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import ImageCarousel from './ImageCarousel'
-import { H2 } from '@/components/custom/Typography'
+import { H2 } from '@/components/custom/typography'
 
 const CertificationSection: FC = () => {
     return (

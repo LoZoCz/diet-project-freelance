@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { H1, P } from '@/components/custom/Typography'
+import { H1, P } from '@/components/custom/typography'
 import Image from 'next/image'
 import abousSecImg from '@/../public/about-sect-img.jpg'
 import { aboutContent } from '@/lib/defaultValues'

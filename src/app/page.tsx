@@ -1,7 +1,7 @@
-import AboutSection from '@/layouts/HomePage/AboutSection'
-import CardSection from '@/layouts/HomePage/CardSection'
-import FAQSection from '@/layouts/HomePage/FAQSection'
-import HeroSection from '@/layouts/HomePage/HeroSection'
+import AboutSection from '@/pagesLayout/HomePage/AboutSection'
+import CardSection from '@/pagesLayout/HomePage/CardSection'
+import FAQSection from '@/pagesLayout/HomePage/FAQSection'
+import HeroSection from '@/pagesLayout/HomePage/HeroSection'
 
 export default function Home() {
     return (

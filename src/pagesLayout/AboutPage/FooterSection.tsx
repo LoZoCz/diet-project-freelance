@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { P } from '@/components/custom/Typography'
+import { P } from '@/components/custom/typography'
 import { aboutContent } from '@/lib/defaultValues'
 
 const FooterSection: FC = () => {

@@ -9,7 +9,7 @@ import {
     IoHomeOutline,
     IoCalculatorOutline,
 } from 'react-icons/io5'
-import { P } from '@/components/custom/Typography'
+import { P } from '@/components/custom/typography'
 
 export const homeContent = {
     hero: {

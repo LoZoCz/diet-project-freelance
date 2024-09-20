@@ -13,7 +13,7 @@ import {
     SelectValue,
 } from '@/components/ui/select'
 import { Tabs, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { H1, H2, Large, P } from '@/components/custom/Typography'
+import { H1, H2, Large, P } from '@/components/custom/typography'
 
 type ActivityLevelTypes =
     | 'sedentary'

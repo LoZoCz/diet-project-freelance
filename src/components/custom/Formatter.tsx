@@ -9,7 +9,7 @@ import {
     Large,
     List,
     P,
-} from './Typography'
+} from './typography'
 import { ExternalLink } from 'lucide-react'
 import { SanityImage } from './SanityImage'
 import { FormatterProps } from '@/lib/typoraphyTypes'

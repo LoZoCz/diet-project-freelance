@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { H1, P } from '@/components/custom/Typography'
+import { H1, P } from '@/components/custom/typography'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { homeContent } from '@/lib/defaultValues'

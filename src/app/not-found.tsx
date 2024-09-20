@@ -1,6 +1,6 @@
 import { Button } from '@/components/ui/button'
 import { Leaf } from 'lucide-react'
-import { InternalLink } from '@/components/custom/Typography'
+import { InternalLink } from '@/components/custom/typography'
 
 export default function NotFound() {
     return (

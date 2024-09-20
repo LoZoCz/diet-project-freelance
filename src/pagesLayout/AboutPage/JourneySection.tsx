@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { H2, H3, P } from '@/components/custom/Typography'
+import { H2, H3, P } from '@/components/custom/typography'
 import { aboutContent } from '@/lib/defaultValues'
 
 const JourneySection: FC = () => {
