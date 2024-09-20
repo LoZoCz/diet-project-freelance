@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { H2, P } from '../Typography'
+import { H2, P } from '../../components/custom/Typography'
 import { aboutContent } from '@/lib/defaultValues'
 
 const StorySection: FC = () => {

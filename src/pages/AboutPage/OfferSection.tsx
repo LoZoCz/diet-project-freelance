@@ -1,7 +1,7 @@
 import { FC } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
-import { List, ListEle, P } from '../Typography'
+import { List, ListEle, P } from '../../components/custom/Typography'
 import { aboutContent } from '@/lib/defaultValues'
 
 const OfferSection: FC = () => {

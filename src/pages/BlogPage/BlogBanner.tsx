@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { H1 } from '../Typography'
+import { H1 } from '../../components/custom/Typography'
 
 const BlogBanner: FC = () => {
     return (

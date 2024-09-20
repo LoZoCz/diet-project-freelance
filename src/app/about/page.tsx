@@ -1,9 +1,9 @@
-import AboutBanner from '@/components/custom/AboutPage/AboutBanner'
-import StorySection from '@/components/custom/AboutPage/StorySection'
-import OfferSection from '@/components/custom/AboutPage/OfferSection'
-import JourneySection from '@/components/custom/AboutPage/JourneySection'
-import CertificationSection from '@/components/custom/AboutPage/CertificationSection'
-import FooterSection from '@/components/custom/AboutPage/FooterSection'
+import AboutBanner from '@/pages/AboutPage/AboutBanner'
+import StorySection from '@/pages/AboutPage/StorySection'
+import OfferSection from '@/pages/AboutPage/OfferSection'
+import JourneySection from '@/pages/AboutPage/JourneySection'
+import CertificationSection from '@/pages/AboutPage/CertificationSection'
+import FooterSection from '@/pages/AboutPage/FooterSection'
 
 export default function About() {
     return (

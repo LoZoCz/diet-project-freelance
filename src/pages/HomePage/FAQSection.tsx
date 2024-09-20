@@ -5,7 +5,7 @@ import {
     AccordionTrigger,
 } from '@/components/ui/accordion'
 import { FC } from 'react'
-import { H4 } from '../Typography'
+import { H4 } from '../../components/custom/Typography'
 import { homeContent } from '@/lib/defaultValues'
 
 const FAQSection: FC = () => {

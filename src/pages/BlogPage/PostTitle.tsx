@@ -1,5 +1,5 @@
 import { FC, HTMLProps } from 'react'
-import { H2, P } from '../Typography'
+import { H2, P } from '../../components/custom/Typography'
 import { dateToLocale } from '@/lib/dateToLocale'
 
 type PostTitleProps = HTMLProps<HTMLDivElement> & {

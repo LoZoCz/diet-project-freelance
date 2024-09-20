@@ -1,7 +1,7 @@
-import AboutSection from '@/components/custom/HomePage/AboutSection'
-import CardSection from '@/components/custom/HomePage/CardSection'
-import FAQSection from '@/components/custom/HomePage/FAQSection'
-import HeroSection from '@/components/custom/HomePage/HeroSection'
+import AboutSection from '@/pages/HomePage/AboutSection'
+import CardSection from '@/pages/HomePage/CardSection'
+import FAQSection from '@/pages/HomePage/FAQSection'
+import HeroSection from '@/pages/HomePage/HeroSection'
 
 export default function Home() {
     return (

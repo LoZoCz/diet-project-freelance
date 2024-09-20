@@ -1,5 +1,5 @@
 import { HTMLProps, FC, ReactNode } from 'react'
-import { H2, P } from '../Typography'
+import { H2, P } from '../../components/custom/Typography'
 import { cn } from '@/lib/utils'
 import { homeContent } from '@/lib/defaultValues'
 
