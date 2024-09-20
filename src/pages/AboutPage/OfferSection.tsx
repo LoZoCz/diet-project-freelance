@@ -1,15 +1,15 @@
 import { FC } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
 import { Badge } from '@/components/ui/badge'
-import { List, ListEle, P } from '../../components/custom/Typography'
+import { H2, List, ListEle, P } from '@/components/custom/Typography'
 import { aboutContent } from '@/lib/defaultValues'
 
 const OfferSection: FC = () => {
     return (
         <section className="container">
-            <h2 className="mb-4 text-3xl font-semibold">
+            <H2 className="mb-4 text-3xl font-semibold">
                 {aboutContent.offer.title}
-            </h2>
+            </H2>
             <Tabs
                 defaultValue={aboutContent.offer.first.value}
                 className="rounded-lg bg-white/50 shadow-md"

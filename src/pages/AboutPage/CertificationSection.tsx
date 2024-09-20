@@ -1,12 +1,13 @@
 import { FC } from 'react'
 import ImageCarousel from './ImageCarousel'
+import { H2 } from '@/components/custom/Typography'
 
 const CertificationSection: FC = () => {
     return (
         <section className="container">
-            <h2 className="mb-4 text-3xl font-semibold">
+            <H2 className="mb-4 text-3xl font-semibold">
                 Certyfikaty i Wykształcenie
-            </h2>
+            </H2>
             <ImageCarousel />
         </section>
     )

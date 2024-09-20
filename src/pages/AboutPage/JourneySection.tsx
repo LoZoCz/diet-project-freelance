@@ -1,13 +1,13 @@
 import { FC } from 'react'
-import { H3, P } from '../../components/custom/Typography'
+import { H2, H3, P } from '@/components/custom/Typography'
 import { aboutContent } from '@/lib/defaultValues'
 
 const JourneySection: FC = () => {
     return (
         <section className="container">
-            <h2 className="mb-4 text-3xl font-semibold">
+            <H2 className="mb-4 text-3xl font-semibold">
                 {aboutContent.journey.title}
-            </h2>
+            </H2>
             <div>
                 <div className="relative space-y-8 border-l-2 border-green-500 pb-6 pl-8">
                     {aboutContent.journey.content.map((item, index) => (

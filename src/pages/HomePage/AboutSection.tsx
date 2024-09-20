@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Button } from '../../components/ui/button'
-import { H3, P } from '../../components/custom/Typography'
+import { H3, P } from '@/components/custom/Typography'
 import Image from 'next/image'
 import abousSecImg from '@/../public/about-sect-img.jpg'
 import Link from 'next/link'
