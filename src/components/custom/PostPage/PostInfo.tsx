@@ -3,6 +3,7 @@ import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar'
 import { P } from '../Typography'
 import { imagesUrl } from '@/lib/imagesUrl'
 import { prefetchAuthor } from '@/sanity/customTypes'
+import { dateToLocale } from '@/lib/dateToLocale'
 
 type Props = {
     author: prefetchAuthor
@@ -25,7 +26,11 @@ const PostInfo: FC<Props> = ({ author, publishedAt }) => {
                 </AvatarFallback>
             </Avatar>
             <P className="text-primary-foreground">{author?.name}</P>
-            <P className="text-primary-foreground">{publishedAt}</P>
+            {publishedAt && (
+                <P className="text-primary-foreground">
+                    {dateToLocale(publishedAt)}
+                </P>
+            )}
         </div>
     )
 }
