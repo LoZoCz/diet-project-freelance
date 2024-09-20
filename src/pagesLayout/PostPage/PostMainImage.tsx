@@ -18,7 +18,7 @@ const PostMainImage: FC<Props> = ({ mainImage, params }) => {
     return (
         <div className='relative after:absolute after:inset-0 after:bg-primary/60 after:content-[""]'>
             <Image
-                src={imageSrc || 'https://via.placeholder.com/56x56'}
+                src={imageSrc || 'https://via.placeholder.com/1920x400'}
                 alt={params.slug + '-image' || 'post image'}
                 width={1920}
                 height={400}
