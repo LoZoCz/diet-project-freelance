@@ -1,5 +1,5 @@
-import AboutBanner from '@/pages/BlogPage/BlogBanner'
-import BlogList from '@/pages/BlogPage/BlogList'
+import AboutBanner from '@/layouts/BlogPage/BlogBanner'
+import BlogList from '@/layouts/BlogPage/BlogList'
 import { client } from '@/sanity/client'
 import { defineQuery } from 'next-sanity'
 

@@ -1,7 +1,7 @@
-import CalcSection from '@/pages/CalcPage/CalcSection'
-import ChangesSection from '@/pages/CalcPage/ChangesSection'
-import TipsSection from '@/pages/CalcPage/TipsSection'
-import UnderstandingSection from '@/pages/CalcPage/UnderstandingSection'
+import CalcSection from '@/layouts/CalcPage/CalcSection'
+import ChangesSection from '@/layouts/CalcPage/ChangesSection'
+import TipsSection from '@/layouts/CalcPage/TipsSection'
+import UnderstandingSection from '@/layouts/CalcPage/UnderstandingSection'
 
 export default function Calculator() {
     return (
