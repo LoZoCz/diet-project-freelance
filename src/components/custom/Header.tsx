@@ -7,7 +7,7 @@ import { cn } from '@/lib/utils'
 import { usePathname } from 'next/navigation'
 import Logo from './Logo'
 import { pageLinks as headerLinks } from '@/lib/defaultValues'
-import { IoApps } from 'react-icons/io5'
+import { IoApps, IoCloseOutline } from 'react-icons/io5'
 
 const Header: FC = () => {
     const pathname = usePathname()
@@ -37,11 +37,10 @@ const Header: FC = () => {
                             <Button
                                 asChild
                                 variant="default"
-                                onClick={() => toggleNavbar()}
                                 className={cn(
                                     'w-full bg-transparent hover:text-primary-foreground',
-                                    (pathname !== '/' && 'text-foreground') ||
-                                        (open && 'text-foreground'),
+                                    open && 'text-foreground',
+                                    pathname !== '/' && 'text-foreground',
                                     pathname === link.href
                                         ? 'bg-primary text-primary-foreground'
                                         : 'bg-transparent'
@@ -63,7 +62,8 @@ const Header: FC = () => {
                     className="grid content-center p-2 tablet:hidden"
                     onClick={() => toggleNavbar()}
                 >
-                    <IoApps className="size-6" />
+                    {!open && <IoApps className="size-6" />}
+                    {open && <IoCloseOutline className="size-10" />}
                 </Button>
             </nav>
         </header>

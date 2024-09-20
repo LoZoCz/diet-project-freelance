@@ -15,7 +15,7 @@ const PostInfo: FC<Props> = ({ author, publishedAt }) => {
         author?.image?.asset && imagesUrl(author?.image?.asset?._ref, 56, 56)
 
     return (
-        <div className="flex items-center gap-4">
+        <div className="flex flex-wrap items-center gap-4">
             <Avatar className="size-14 overflow-hidden rounded-full">
                 <AvatarImage
                     src={authorSrc || 'https://via.placeholder.com/1920x400'}
