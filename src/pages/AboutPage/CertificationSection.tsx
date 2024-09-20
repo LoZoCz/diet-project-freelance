@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { ImageCarousel } from './ImageCarousel'
+import ImageCarousel from './ImageCarousel'
 
 const CertificationSection: FC = () => {
     return (

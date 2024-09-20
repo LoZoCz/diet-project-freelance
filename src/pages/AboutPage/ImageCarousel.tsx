@@ -1,5 +1,3 @@
-import * as React from 'react'
-
 import {
     Carousel,
     CarouselContent,
@@ -7,8 +5,9 @@ import {
     CarouselNext,
     CarouselPrevious,
 } from '@/components/ui/carousel'
+import { FC } from 'react'
 
-export function ImageCarousel() {
+const ImageCarousel: FC = () => {
     return (
         <Carousel className="w-full px-0 tablet:px-7">
             <CarouselContent>
@@ -27,3 +26,5 @@ export function ImageCarousel() {
         </Carousel>
     )
 }
+
+export default ImageCarousel
