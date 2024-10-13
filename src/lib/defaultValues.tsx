@@ -1,15 +1,18 @@
 import { PiCheese, PiCarrot } from 'react-icons/pi'
 import { TbMeat } from 'react-icons/tb'
 import {
-    IoLogoInstagram,
-    IoLogoFacebook,
-    IoMail,
     IoPersonOutline,
     IoNewspaperOutline,
     IoHomeOutline,
     IoCalculatorOutline,
 } from 'react-icons/io5'
-import { P } from '@/components/custom/typography'
+import { PiForkKnife } from 'react-icons/pi'
+import kidsDietImg from '@/../public/diety/DZIECI WEGE.jpg'
+import sportDietImg from '@/../public/diety/BIEGACZKA 3000 KCAL.jpg'
+import reductionDietImg from '@/../public/diety/REDUKCJA.jpg'
+import glutenDietImg from '@/../public/diety/BEZ GLUTENU BEZMLECZNA.jpg'
+import pregnancyDietImg from '@/../public/diety/DIETA CIĘŻARNA.jpg'
+import alergyDietImg from '@/../public/diety/DIETA ALERGIA BIAŁKO KURZE.jpg'
 
 export const homeContent = {
     hero: {
@@ -90,14 +93,15 @@ export const homeContent = {
 }
 
 export const aboutContent = {
-    title: 'Cześć, nazywam się Jane!',
-    quote: '"Niech pożywienie będzie twoim lekarstwem, a lekarstwo pożywieniem."&quot;" - Hipokrates',
+    title: 'Witajcie, mam na imię Alicja.',
+    quote: '„Ludzie, którzy tracą czas czekając, aż zaistnieją najbardziej sprzyjające warunki, nigdy nic nie zdziałają. Najlepszy czas na działanie jest teraz!” - Mark Fisher',
     story: {
         title: 'Moja Historia',
         paragraphs: [
-            'Witaj w moim małym zakątku internetu! Nazywam się Jane i jestem pasjonatką zdrowego żywienia oraz zdrowego stylu życia. Moja przygoda z dietetyką zaczęła się, gdy byłam nastolatką zmagającą się z własnymi problemami zdrowotnymi. Dzięki odpowiedniemu odżywianiu zmieniłam swoje życie, a teraz chcę pomagać innym zrobić to samo.',
-            'Z ponad dziesięcioletnim doświadczeniem miałam zaszczyt współpracować z setkami klientów, z których każdy miał swoją unikalną historię i cele. Od zapracowanych profesjonalistów szukających więcej energii po sportowców dążących do szczytowej formy – na własne oczy widziałam, jak odpowiednie żywienie może zmienić życie.',
-            'Kiedy nie układam spersonalizowanych planów żywieniowych lub nie zagłębiam się w najnowsze badania dotyczące żywienia, można mnie znaleźć eksperymentującą z nowymi przepisami w kuchni, pielęgnującą mój mały warzywny ogródek lub wędrującą po pięknych szlakach w okolicy mojego domu. Wierzę, że zrównoważone życie to klucz do długoterminowego zdrowia i szczęścia.',
+            'Jestem tutaj po to, aby pomóc każdemu z Was odnaleźć drogę do satysfakcjonującego stylu życia poprzez odpowiednio dostosowany model żywienia i oferuję moje wsparcie oraz indywidualne podejście. Swoją wiedzę poszerzoną o liczne kursy i szkolenia, uzupełnioną praktycznym doświadczeniem oraz pasją oferuję z całą odpowiedzialnością.',
+            'Wierzę, że zdrowe odżywianie nie musi być skomplikowane ani kosztowne. Tworzę plany żywieniowe, które są proste w przygotowaniu z produktów ogólnodostępnych i nie obciążają budżetu, a jednocześnie pomagają osiągnąć zamierzone cele zdrowotne i sylwetkowe.',
+            'Przeprowadzam skuteczne strategie dietetyczne dzieci i dorosłych ze spektrum Autyzmu.',
+            'Dużą wagę przykładam do diagnostyki, jest to niezbędny element współpracy.',
         ],
     },
     offer: {
@@ -106,88 +110,23 @@ export const aboutContent = {
             {
                 title: 'Moje Podejście',
                 value: 'approach',
-                content:
-                    'Wierzę w holistyczne podejście oparte na dowodach naukowych. U mnie nie znajdziesz modnych diet ani szybkich rozwiązań! Skupiam się na trwałych zmianach stylu życia, które odżywią zarówno Twoje ciało, jak i umysł. Moim celem jest pomóc Ci zbudować pozytywną relację z jedzeniem, zrozumieć potrzeby swojego organizmu i osiągnąć długotrwałe rezultaty.',
-            },
-            {
-                title: 'Usługi',
-                value: 'services',
-                content: [
-                    'Indywidualne plany żywieniowe',
-                    'Sesje coachingowe jeden na jeden',
-                    'Warsztaty grupowe i seminaria',
-                    'Programy wellness dla firm',
-                    'Tworzenie przepisów',
-                    'Przeglądy spiżarni',
-                ],
             },
             {
                 title: 'Specjalizacje',
                 value: 'expertise',
-                content: [
-                    'Kontrola wagi',
-                    'Żywienie sportowców',
-                    'Zarządzanie cukrzycą',
-                    'Zdrowie jelit',
-                    'Intuicyjne jedzenie',
-                    'Dieta roślinna',
-                    'Planowanie posiłków',
-                    'Edukacja żywieniowa',
-                ],
             },
         ],
         first: {
             value: 'approach',
             content:
-                'Wierzę w holistyczne podejście oparte na dowodach naukowych. U mnie nie znajdziesz modnych diet ani szybkich rozwiązań! Skupiam się na trwałych zmianach stylu życia, które odżywią zarówno Twoje ciało, jak i umysł. Moim celem jest pomóc Ci zbudować pozytywną relację z jedzeniem, zrozumieć potrzeby swojego organizmu i osiągnąć długotrwałe rezultaty.',
+                'Wierzę, że zdrowe odżywianie nie musi być skomplikowane ani kosztowne. Tworzę plany żywieniowe, które są proste w przygotowaniu z produktów ogólnodostępnych i nie obciążają budżetu, a jednocześnie pomagają osiągnąć zamierzone cele zdrowotne i sylwetkowe.',
         },
         second: {
-            value: 'services',
-            content: [
-                'Indywidualne plany żywieniowe',
-                'Sesje coachingowe jeden na jeden',
-                'Warsztaty grupowe i seminaria',
-                'Programy wellness dla firm',
-                'Tworzenie przepisów',
-                'Przeglądy spiżarni',
-            ],
-        },
-        third: {
             value: 'expertise',
             content: [
-                'Kontrola wagi',
-                'Żywienie sportowców',
-                'Zarządzanie cukrzycą',
-                'Zdrowie jelit',
-                'Intuicyjne jedzenie',
-                'Dieta roślinna',
-                'Planowanie posiłków',
-                'Edukacja żywieniowa',
+                'Specjalizuję się w terapii chorób dietozależnych, zespołu metabolicznego, NAFLD i MASH, zaburzeń gospodarki węglowodanowo- insulinowej, hipoglikemii reaktywnej- poposiłkowej, insulinooporności i hiperinsulinemii, zaburzeń pracy tarczycy, Hashimoto, PCOS, chorób układu pokarmowego oraz jelit- Sibo, Imo, Sifo, Celiakii, ukończyłam kurs Psychodietetyki, pracuje z pacjentami z depresją i współistniejącą otyłością.',
             ],
         },
-    },
-    journey: {
-        title: 'Moja Droga',
-        content: [
-            {
-                title: 'Dietetyk w prywatnej praktyce',
-                time: '2018 - Obecnie',
-                paragraph:
-                    'Spełniam swoje marzenie, pomagając klientom osiągać ich cele zdrowotne dzięki spersonalizowanym planom żywieniowym. Każdy dzień przynosi nowe wyzwania i nagrody, gdy wspólnie dążymy do najlepszej wersji siebie.',
-            },
-            {
-                title: 'Dietetyk kliniczny, Szpital Green Health',
-                time: '2015 - 2018',
-                paragraph:
-                    'Ta rola otworzyła mi oczy na kluczowe znaczenie żywienia w procesie leczenia i powrotu do zdrowia. Pracowałam z pacjentami borykającymi się z różnymi schorzeniami, dostosowując plany żywieniowe do ich terapii.',
-            },
-            {
-                title: 'Asystentka badawcza, Instytut Nauk o Żywieniu',
-                time: '2013 - 2015',
-                paragraph:
-                    'Moja pasja do żywienia opartego na dowodach naukowych rozwinęła się tutaj. Brałam udział w przełomowych badaniach nad wpływem diety na choroby przewlekłe, co umocniło moje zaangażowanie w ciągłą naukę w tej dziedzinie.',
-            },
-        ],
     },
     footer: [
         'Dziękuję za odwiedzenie mojej strony. Cieszę się, że mogę być częścią Twojej drogi do zdrowia!',
@@ -273,23 +212,63 @@ export const pageLinks = [
         ),
         href: '/blog',
     },
+    {
+        label: 'Diety',
+        icon: <PiForkKnife className="mr-2 hidden size-6 sm-mobile:block" />,
+        href: '/diets',
+    },
 ]
 
-export const socialsContact = [
+export const dietPackages = [
     {
-        icon: (
-            <IoLogoFacebook size={30} className="text-secondary-foreground" />
-        ),
-        href: 'https://www.facebook.com/diety.poczta',
+        title: 'Zdrowy Start dla Dzieci',
+        description: 'Zbilansowana dieta dla dzieci w wieku 5-12 lat',
+        price: 79.99,
+        image: kidsDietImg,
+        badge: 'Dla Dzieci',
+        link: 'https://buy.stripe.com/test_3cs5n011J1FZaCkfYY',
     },
     {
-        icon: (
-            <IoLogoInstagram size={30} className="text-secondary-foreground" />
-        ),
-        href: 'https://www.instagram.com/diety.poczta',
+        title: 'Paliwo dla Aktywnych Nastolatków',
+        description:
+            'Dieta bogata w składniki odżywcze dla aktywnych nastolatków w wieku 13-19 lat',
+        price: 89.99,
+        image: sportDietImg,
+        badge: 'Dla Nastolatków',
+        link: 'https://buy.stripe.com/test_bIY2aObGnbgz25O8wx',
     },
     {
-        icon: <IoMail size={30} className="text-secondary-foreground" />,
-        href: 'mailto:diety.poczta@gmail.com',
+        title: 'Zastrzyk Witalności dla Dorosłych',
+        description:
+            'Kompleksowy plan dietetyczny dla dorosłych w wieku 20-40 lat',
+        price: 99.99,
+        image: reductionDietImg,
+        badge: 'Dla Dorosłych',
+        link: 'https://buy.stripe.com/test_8wM7v88ubckD39S4gi',
+    },
+    {
+        title: 'Dobre Samopoczucie dla Seniorów',
+        description: 'Dostosowana dieta dla dorosłych 60+',
+        price: 94.99,
+        image: glutenDietImg,
+        badge: 'Dla Seniorów',
+        link: 'https://buy.stripe.com/test_fZebLo6m3doHh0I5kn',
+    },
+    {
+        title: 'Odżywianie w Ciąży',
+        description: 'Niezbędne składniki odżywcze dla przyszłych mam',
+        price: 109.99,
+        image: pregnancyDietImg,
+        badge: 'Dla Ciężarnych',
+        link: 'https://buy.stripe.com/test_aEUdTwaCjesL9yg28c',
+    },
+    {
+        title: 'Wydajność dla Sportowców',
+        description:
+            'Dieta wysokokaloryczna dla sportowców i miłośników fitnessu',
+        price: 119.99,
+        image: alergyDietImg,
+        badge: 'Dla Sportowców',
+        link: 'https://buy.stripe.com/test_fZe02G7q7fwP6m48wB',
     },
 ]

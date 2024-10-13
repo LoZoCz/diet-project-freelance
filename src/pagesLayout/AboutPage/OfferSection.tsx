@@ -1,7 +1,6 @@
 import { FC } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { Badge } from '@/components/ui/badge'
-import { H2, List, ListEle, P } from '@/components/custom/typography'
+import { H2, P } from '@/components/custom/typography'
 import { aboutContent } from '@/lib/defaultValues'
 
 const OfferSection: FC = () => {
@@ -14,7 +13,7 @@ const OfferSection: FC = () => {
                 defaultValue={aboutContent.offer.first.value}
                 className="rounded-lg bg-white/50 shadow-md"
             >
-                <TabsList className="grid w-full grid-cols-3">
+                <TabsList className="grid w-full grid-cols-2">
                     {aboutContent.offer.tabs.map((tab, index) => (
                         <TabsTrigger key={index} value={tab.value}>
                             {tab.title}
@@ -31,28 +30,10 @@ const OfferSection: FC = () => {
                     value={aboutContent.offer.second.value}
                     className="p-6"
                 >
-                    <List>
-                        {aboutContent.offer.second.content.map(
-                            (item, index) => (
-                                <ListEle key={index}>{item}</ListEle>
-                            )
-                        )}
-                    </List>
-                </TabsContent>
-                <TabsContent
-                    value={aboutContent.offer.third.value}
-                    className="p-6"
-                >
                     <div className="flex flex-wrap gap-2">
-                        {aboutContent.offer.third.content.map(
+                        {aboutContent.offer.second.content.map(
                             (skill, index) => (
-                                <Badge
-                                    key={index}
-                                    variant="secondary"
-                                    className="bg-green-200"
-                                >
-                                    {skill}
-                                </Badge>
+                                <P key={index}>{skill}</P>
                             )
                         )}
                     </div>

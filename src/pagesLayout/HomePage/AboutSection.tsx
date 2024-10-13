@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Button } from '../../components/ui/button'
-import { H3, P } from '@/components/custom/typography'
+import { H3, H4, P } from '@/components/custom/typography'
 import Image from 'next/image'
 import abousSecImg from '@/../public/about-sect-img.jpg'
 import Link from 'next/link'
@@ -17,7 +17,7 @@ const AboutSection: FC = () => {
                 />
             </div>
             <div className="space-y-8">
-                <H3 className="text-5xl">{homeContent.about.title}</H3>
+                <H4 className="text-5xl">{homeContent.about.title}</H4>
                 <P>{homeContent.about.paragraph}</P>
                 <Button asChild>
                     <Link href="/about">{homeContent.about.cta}</Link>

@@ -1,5 +1,5 @@
 import { HTMLProps, FC, ReactNode } from 'react'
-import { H2, P } from '@/components/custom/typography'
+import { H2, H3, P } from '@/components/custom/typography'
 import { cn } from '@/lib/utils'
 import { homeContent } from '@/lib/defaultValues'
 
@@ -10,9 +10,9 @@ const CardSection: FC = () => {
                 <CardElement key={id}>
                     {card.icon}
                     <div className="z-30">
-                        <H2 className="lg: border-none text-2xl xl:text-3xl">
+                        <H3 className="lg: border-none text-2xl xl:text-3xl">
                             {card.title}
-                        </H2>
+                        </H3>
                         <P>{card.description}</P>
                     </div>
                 </CardElement>

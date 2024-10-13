@@ -1,6 +1,5 @@
 import { FC } from 'react'
 import Logo from './Logo'
-import { pageLinks as footerLinks, socialsContact } from '@/lib/defaultValues'
 import { ExternalLink, InternalLink, P } from './typography'
 
 const Footer: FC = () => {
@@ -11,27 +10,20 @@ const Footer: FC = () => {
                 <div className="flex flex-wrap gap-12">
                     <div className="space-y-4">
                         <P className="font-bold">Kontakt</P>
-                        <ul className="flex items-center gap-4">
-                            {socialsContact.map((link, id) => (
-                                <li key={id}>
-                                    <ExternalLink href={link.href}>
-                                        {link.icon}
-                                    </ExternalLink>
-                                </li>
-                            ))}
-                        </ul>
+                        <P className="space-x-1">
+                            <span>Mail:</span>
+                            <ExternalLink href="mailto:dietabezcudow@o2.pl">
+                                dietabezcudow@o2.pl
+                            </ExternalLink>
+                        </P>
                     </div>
                     <div className="space-y-4">
-                        <P className="font-bold">Podstrony</P>
-                        <ul className="flex flex-col gap-2">
-                            {footerLinks.map((link, id) => (
-                                <li key={id}>
-                                    <InternalLink href={link.href}>
-                                        {link.label}
-                                    </InternalLink>
-                                </li>
-                            ))}
-                        </ul>
+                        <P className="font-bold">Regulamin</P>
+                        <P>
+                            <InternalLink href="/terms">
+                                Regulamin i RODO
+                            </InternalLink>
+                        </P>
                     </div>
                 </div>
             </div>

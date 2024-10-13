@@ -20,15 +20,15 @@ const Header: FC = () => {
     return (
         <header
             className={cn(
-                'absolute left-0 right-0 top-0 z-50 flex h-header items-center justify-between gap-6 px-4 py-4 tablet:justify-start tablet:gap-12 tablet:px-12',
+                'absolute left-0 right-0 top-0 z-50 flex h-header items-center justify-between gap-6 px-4 py-4 xl:justify-start xl:gap-12 xl:px-12',
                 pathname !== '/' ? 'relative' : 'absolute'
             )}
         >
-            <Logo className="size-12 tablet:size-16" />
+            <Logo className="size-12 xl:size-16" />
             <nav className="flex">
                 <ul
                     className={cn(
-                        'absolute left-4 right-4 top-[102%] grid grid-cols-1 grid-rows-4 items-center gap-4 rounded-md bg-popover p-2 shadow-md outline outline-1 outline-primary sm-mobile:grid-cols-2 sm-mobile:grid-rows-2 tablet:static tablet:flex tablet:gap-8 tablet:bg-transparent tablet:shadow-none tablet:outline-none',
+                        'absolute left-4 right-4 top-[102%] grid grid-cols-1 grid-rows-4 items-center gap-4 rounded-md bg-popover p-2 shadow-md outline outline-1 outline-primary sm-mobile:grid-cols-2 sm-mobile:grid-rows-2 xl:static xl:flex xl:gap-8 xl:bg-transparent xl:shadow-none xl:outline-none',
                         open ? 'grid' : 'hidden'
                     )}
                 >
@@ -59,7 +59,7 @@ const Header: FC = () => {
                 </ul>
                 <Button
                     size="icon"
-                    className="grid content-center p-2 tablet:hidden"
+                    className="grid content-center p-2 xl:hidden"
                     onClick={() => toggleNavbar()}
                 >
                     {!open && <IoApps className="size-6" />}

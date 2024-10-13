@@ -95,7 +95,7 @@ const config = {
                 blog: '850px',
             },
             backgroundImage: {
-                'hero-image': "url('../../public/vege-img.jpg')",
+                'hero-image': "url('../../public/diet-left.webp')",
             },
         },
     },

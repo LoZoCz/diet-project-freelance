@@ -1,6 +1,7 @@
 import { PortableText, PortableTextComponents } from 'next-sanity'
 import {
     Blockquote,
+    ExternalLink,
     H1,
     H2,
     H3,
@@ -10,7 +11,6 @@ import {
     List,
     P,
 } from './typography'
-import { ExternalLink } from 'lucide-react'
 import { SanityImage } from './SanityImage'
 import { FormatterProps } from '@/lib/typoraphyTypes'
 import { cn } from '@/lib/utils'
