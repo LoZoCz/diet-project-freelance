@@ -1,7 +1,6 @@
 import Image from 'next/image'
 import { ShoppingCart } from 'lucide-react'
 import { Button } from '@/components/ui/button'
-import { Badge } from '@/components/ui/badge'
 import { ExternalLink, H1, H4, P } from '@/components/custom/typography'
 import { dietPackages } from '@/lib/defaultValues'
 
@@ -22,17 +21,10 @@ export default function Diets() {
                             key={index}
                             className="flex flex-col gap-4 rounded-lg bg-white p-4 shadow-lg"
                         >
-                            <div>
-                                <Badge
-                                    className="mb-2 w-fit"
-                                    variant="secondary"
-                                >
-                                    {pkg.badge}
-                                </Badge>
-                                <H4 className="text-xl font-bold text-green-800">
-                                    {pkg.title}
-                                </H4>
-                            </div>
+                            <H4 className="text-xl font-bold text-green-800">
+                                {pkg.title}
+                            </H4>
+
                             <div className="flex-grow space-y-4">
                                 <div className="relative aspect-square">
                                     <Image

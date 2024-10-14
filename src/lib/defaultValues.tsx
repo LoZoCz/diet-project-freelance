@@ -1,5 +1,3 @@
-import { PiCheese, PiCarrot } from 'react-icons/pi'
-import { TbMeat } from 'react-icons/tb'
 import {
     IoPersonOutline,
     IoNewspaperOutline,
@@ -21,44 +19,15 @@ export const homeContent = {
             span: 'cud',
         },
         paragraph:
-            'Odkryj, jak zrównoważone odżywianie może zmienić Twoje życie na lepsze. Nie szukaj magicznych rozwiązań – postaw na naukowo udowodnione metody, które przynoszą długotrwałe efekty. Dołącz do naszej społeczności i zainspiruj się zdrowymi nawykami, które pomogą Ci osiągnąć wymarzone cele.',
+            'Przekonaj się że, zrównoważone odżywianie może zmienić Twoje życie na lepsze. Nie szukaj magicznych rozwiązań – postaw na naukowo udowodnione metody, które przynoszą długotrwałe efekty. Dołącz do naszej społeczności i zainspiruj się zdrowymi nawykami, które pomogą Ci osiągnąć wymarzone cele.',
         cta: 'Odwiedź blog',
     },
-    cards: [
-        {
-            title: 'Pełnowartościowe białko w diecie!',
-            icon: (
-                <TbMeat
-                    size={90}
-                    className="rounded-full border-2 border-primary p-2 text-primary"
-                />
-            ),
-            description:
-                'Białko jest kluczowe dla budowy mięśni i regeneracji organizmu. Wybieraj wysokiej jakości mięso, które dostarczy Ci niezbędnych aminokwasów i siły do działania na co dzień.',
-        },
-        {
-            title: 'Moc świeżych warzyw i owoców w diecie!',
-            icon: (
-                <PiCarrot
-                    size={90}
-                    className="rounded-full border-2 border-primary p-2 text-primary"
-                />
-            ),
-            description:
-                'Warzywa i owoce to podstawa zdrowego odżywiania. Dostarczają witamin, minerałów i antyoksydantów, wspierając zdrowie i dodając energii. Wzbogać swoją dietę o te naturalne produkty, aby czuć się pełnym witalności.',
-        },
-        {
-            title: 'Różnorodność serów - smak i zdrowie!',
-            icon: (
-                <PiCheese
-                    size={90}
-                    className="rounded-full border-2 border-primary p-2 text-primary"
-                />
-            ),
-            description:
-                'Sery to źródło wapnia i białka, które wzbogacą Twoje posiłki o niepowtarzalny smak. Odkryj szeroki wybór serów, które podkreślą charakter Twojej diety.',
-        },
-    ],
+    diets: {
+        title: 'Odmień swoje życie dzięki naszym spersonalizowanym planom dietetycznym',
+        paragraph:
+            'Znajdź zdrowszą wersję siebie dzięki naszym starannie opracowanym pakietom dietetycznym. Niezależnie od tego, czy dopiero zaczynasz, czy szukasz transformacji dla całej rodziny, mamy dla Ciebie idealny plan.',
+        cta: 'Odkryj Pakiety Dietetyczne',
+    },
     about: {
         title: 'Dowiedz się więcej o mnie',
         paragraph:
@@ -71,7 +40,7 @@ export const homeContent = {
             {
                 title: 'Jakie rodzaje diet oferujesz?',
                 content:
-                    'Oferuję diety dostosowane do różnych potrzeb i celów, w tym diety redukcyjne, zdrowotne oraz wspierające treningi. Moje plany żywieniowe opierają się na prostych, regionalnych produktach, które są łatwo dostępne i naturalne.',
+                    'Oferuję diety dostosowane do różnych potrzeb i celów, w tym diety redukcyjne, zdrowotne oraz wspierające treningi. Moje plany żywieniowe opierają się na prostych, ogólnodostępnych produktach.',
             },
             {
                 title: 'Czy diety są dostosowane indywidualnie?',
@@ -99,7 +68,6 @@ export const aboutContent = {
         title: 'Moja Historia',
         paragraphs: [
             'Jestem tutaj po to, aby pomóc każdemu z Was odnaleźć drogę do satysfakcjonującego stylu życia poprzez odpowiednio dostosowany model żywienia i oferuję moje wsparcie oraz indywidualne podejście. Swoją wiedzę poszerzoną o liczne kursy i szkolenia, uzupełnioną praktycznym doświadczeniem oraz pasją oferuję z całą odpowiedzialnością.',
-            'Wierzę, że zdrowe odżywianie nie musi być skomplikowane ani kosztowne. Tworzę plany żywieniowe, które są proste w przygotowaniu z produktów ogólnodostępnych i nie obciążają budżetu, a jednocześnie pomagają osiągnąć zamierzone cele zdrowotne i sylwetkowe.',
             'Przeprowadzam skuteczne strategie dietetyczne dzieci i dorosłych ze spektrum Autyzmu.',
             'Dużą wagę przykładam do diagnostyki, jest to niezbędny element współpracy.',
         ],
@@ -180,7 +148,7 @@ export const calcContent = {
         paragraphs: [
             'Pamiętaj, że kluczem do zdrowego stylu życia jest wprowadzanie zrównoważonych zmian. Nie próbuj zmieniać całej swojej diety z dnia na dzień. Zacznij od małych, wykonalnych kroków i stopniowo je rozwijaj.',
             'Słuchaj swojego ciała i nie bądź zbyt surowy w stosunku do swoich celów kalorycznych. Czasami możesz sobie pozwolić na coś słodkiego – najważniejszy jest ogólny wzorzec odżywiania w dłuższym okresie czasu.',
-            'Jeśli masz konkretne cele zdrowotne, warto skonsultować się z zarejestrowanym dietetykiem, który pomoże ci stworzyć spersonalizowany plan dostosowany do twojego stylu życia i preferencji.',
+            'Jeśli masz konkretne cele zdrowotne, warto skonsultować się ze mną, pomoge ci stworzyć spersonalizowany plan dostosowany do twojego stylu życia i preferencji.',
         ],
     },
 }
@@ -225,7 +193,6 @@ export const dietPackages = [
         description: 'Zbilansowana dieta dla dzieci w wieku 5-12 lat',
         price: 79.99,
         image: kidsDietImg,
-        badge: 'Dla Dzieci',
         link: 'https://buy.stripe.com/test_3cs5n011J1FZaCkfYY',
     },
     {
@@ -234,7 +201,6 @@ export const dietPackages = [
             'Dieta bogata w składniki odżywcze dla aktywnych nastolatków w wieku 13-19 lat',
         price: 89.99,
         image: sportDietImg,
-        badge: 'Dla Nastolatków',
         link: 'https://buy.stripe.com/test_bIY2aObGnbgz25O8wx',
     },
     {
@@ -243,7 +209,6 @@ export const dietPackages = [
             'Kompleksowy plan dietetyczny dla dorosłych w wieku 20-40 lat',
         price: 99.99,
         image: reductionDietImg,
-        badge: 'Dla Dorosłych',
         link: 'https://buy.stripe.com/test_8wM7v88ubckD39S4gi',
     },
     {
@@ -251,7 +216,6 @@ export const dietPackages = [
         description: 'Dostosowana dieta dla dorosłych 60+',
         price: 94.99,
         image: glutenDietImg,
-        badge: 'Dla Seniorów',
         link: 'https://buy.stripe.com/test_fZebLo6m3doHh0I5kn',
     },
     {
@@ -259,7 +223,6 @@ export const dietPackages = [
         description: 'Niezbędne składniki odżywcze dla przyszłych mam',
         price: 109.99,
         image: pregnancyDietImg,
-        badge: 'Dla Ciężarnych',
         link: 'https://buy.stripe.com/test_aEUdTwaCjesL9yg28c',
     },
     {
@@ -268,7 +231,6 @@ export const dietPackages = [
             'Dieta wysokokaloryczna dla sportowców i miłośników fitnessu',
         price: 119.99,
         image: alergyDietImg,
-        badge: 'Dla Sportowców',
         link: 'https://buy.stripe.com/test_fZe02G7q7fwP6m48wB',
     },
 ]

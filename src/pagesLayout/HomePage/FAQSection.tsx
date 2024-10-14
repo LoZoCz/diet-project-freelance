@@ -18,7 +18,7 @@ const FAQSection: FC = () => {
                         <AccordionTrigger className="text-center text-4xl tablet:text-left">
                             {faq.title}
                         </AccordionTrigger>
-                        <AccordionContent className="text-lg">
+                        <AccordionContent className="text-center text-lg tablet:text-left">
                             {faq.content}
                         </AccordionContent>
                     </AccordionItem>

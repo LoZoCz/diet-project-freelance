@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import { Button } from '../../components/ui/button'
-import { H3, H4, P } from '@/components/custom/typography'
+import { H4, P } from '@/components/custom/typography'
 import Image from 'next/image'
 import abousSecImg from '@/../public/about-sect-img.jpg'
 import Link from 'next/link'
@@ -17,11 +17,17 @@ const AboutSection: FC = () => {
                 />
             </div>
             <div className="space-y-8">
-                <H4 className="text-5xl">{homeContent.about.title}</H4>
-                <P>{homeContent.about.paragraph}</P>
-                <Button asChild>
-                    <Link href="/about">{homeContent.about.cta}</Link>
-                </Button>
+                <H4 className="text-center text-5xl tablet:text-left">
+                    {homeContent.about.title}
+                </H4>
+                <P className="text-center tablet:text-left">
+                    {homeContent.about.paragraph}
+                </P>
+                <div className="flex items-center justify-center gap-4 laptop:items-start laptop:justify-start">
+                    <Button className="text-xl" asChild>
+                        <Link href="/about">{homeContent.about.cta}</Link>
+                    </Button>
+                </div>
             </div>
         </section>
     )
