@@ -1,18 +1,11 @@
-import Stripe from 'stripe'
 import { Resend } from 'resend'
 import Email from '@/email/Email'
 import { ReactElement } from 'react'
+import { stripe } from '@/lib/stripe'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
-const stripe = new Stripe(process.env.STRIPE_SECRET_KEY as string, {
-    apiVersion: '2024-09-30.acacia',
-    typescript: true,
-})
-console.log(process.env.STRIPE_SECRET_KEY as string)
-
 const endpointSecret = process.env.STRIPE_WEBHOOK_KEY as string
-console.log(endpointSecret)
 
 export const runtime = 'nodejs'
 

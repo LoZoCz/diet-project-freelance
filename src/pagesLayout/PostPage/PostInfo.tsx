@@ -18,7 +18,7 @@ const PostInfo: FC<Props> = ({ author, publishedAt }) => {
         <div className="flex flex-wrap items-center gap-4">
             <Avatar className="size-14 overflow-hidden rounded-full">
                 <AvatarImage
-                    src={authorSrc || 'https://via.placeholder.com/56x56'}
+                    src={authorSrc}
                     alt={author?.name + '-avatar' || 'author avatar'}
                 />
                 <AvatarFallback className="grid size-full place-content-center bg-black/60 text-primary-foreground">

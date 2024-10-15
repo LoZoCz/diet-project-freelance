@@ -6,7 +6,7 @@ import { cn } from '@/lib/utils'
 import Footer from '@/components/custom/Footer'
 
 const fontSans = FontSans({
-    weight: ['100', '200', '300', '400', '500', '600', '700', '800', '900'],
+    weight: ['200', '300', '400', '500', '600', '700', '800', '900'],
     subsets: ['latin'],
     variable: '--font-sans',
 })
