@@ -3,7 +3,6 @@ import StorySection from '@/pagesLayout/AboutPage/StorySection'
 import OfferSection from '@/pagesLayout/AboutPage/OfferSection'
 import CertificationSection from '@/pagesLayout/AboutPage/CertificationSection'
 import FooterSection from '@/pagesLayout/AboutPage/FooterSection'
-import Image from 'next/image'
 
 export default function About() {
     return (

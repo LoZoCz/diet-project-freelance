@@ -10,19 +10,21 @@ import { FC } from 'react'
 
 const certifiactsImgs = [
     'certyfikat-1.jpg',
-    'certyfikat-2.jpg',
     'certyfikat-3.jpg',
     'certyfikat-4.jpg',
     'certyfikat-5.jpg',
     'certyfikat-6.jpg',
+    'certyfikat-7.jpg',
+    'certyfikat-8.jpg',
+    'certyfikat-9.jpg',
 ]
 
 const ImageCarousel: FC = () => {
     return (
-        <Carousel className="w-full px-0 tablet:px-7">
+        <Carousel className="px-0 tablet:px-7">
             <CarouselContent>
                 {certifiactsImgs.map((img, index) => (
-                    <CarouselItem key={index}>
+                    <CarouselItem className="basis-1/2" key={index}>
                         <div className="">
                             <div className="aspect-video w-full bg-primary">
                                 <Image
