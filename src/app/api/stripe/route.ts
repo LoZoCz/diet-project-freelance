@@ -54,7 +54,7 @@ export async function POST(req: Request) {
                 console.log('created', (event.data.object as any).created)
 
                 const { data, error } = await resend.emails.send({
-                    from: 'onboarding@resend.dev',
+                    from: 'email@dietabezcudow.pl',
                     to: [(event.data.object as any).customer_details.email],
                     subject: 'Twój zakupiony plan diety - DietaBezCudów',
                     react: Email({}) as ReactElement,

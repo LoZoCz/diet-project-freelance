@@ -4,34 +4,46 @@ import PostInfo from '@/pagesLayout/PostPage/PostInfo'
 import PostMainImage from '@/pagesLayout/PostPage/PostMainImage'
 import { H1 } from '@/components/custom/typography'
 import { Badge } from '@/components/ui/badge'
-import { client } from '@/sanity/client'
-import { defineQuery } from 'next-sanity'
+import fetchSinglePost from '@/lib/fetchSinglePost'
+import { imagesUrl } from '@/lib/imagesUrl'
 
-type PostPageProps = {
+export type PostPageProps = {
     params: {
         slug: string
     }
 }
 
-const options = { next: { revalidate: 1800 } }
+export async function generateMetadata({ params }: { params: PostPageProps }) {
+    try {
+        const post = await fetchSinglePost(params)
 
-const POST_QUERY = defineQuery(`*[_type=="post" && slug.current==$slug][0] {
-    title,
-    slug,
-    publishedAt,
-    categories[]->{
-      title
-    },
-    author->{
-      name,
-      image
-    },
-    mainImage,
-    body
-}`)
+        if (!post) {
+            return {
+                title: 'Nie znaleziono',
+                description: 'Strona której szuksz nie istnieje',
+            }
+        }
+
+        const imageSrc =
+            post.mainImage?.asset && imagesUrl(post.mainImage?.asset?._ref)
+
+        return {
+            openGraph: {
+                title: post.title,
+                image: imageSrc,
+            },
+        }
+    } catch (err) {
+        console.error('Error fetching post:', err)
+        return {
+            title: 'Błąd podczas pobierania danych',
+            description: 'Przepraszamy, wystąpił błąd',
+        }
+    }
+}
 
 export default async function PostPage({ params }: PostPageProps) {
-    const post = await client.fetch(POST_QUERY, params, options)
+    const post = await fetchSinglePost({ params })
 
     if (!post) return NotFound()
 
