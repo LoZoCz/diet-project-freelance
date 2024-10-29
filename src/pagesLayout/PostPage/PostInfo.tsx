@@ -1,9 +1,9 @@
 import { FC } from 'react'
 import { Avatar, AvatarFallback, AvatarImage } from '@radix-ui/react-avatar'
 import { P } from '@/components/custom/typography'
-import { imagesUrl } from '@/lib/imagesUrl'
+import { imagesUrl } from '@/lib/sanity-helpers/imagesUrl'
 import { prefetchAuthor } from '@/sanity/customTypes'
-import { dateToLocale } from '@/lib/dateToLocale'
+import { dateToLocale } from '@/lib/sanity-helpers/dateToLocale'
 
 type Props = {
     author: prefetchAuthor

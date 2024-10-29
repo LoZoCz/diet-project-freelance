@@ -12,7 +12,7 @@ import {
     P,
 } from './typography'
 import { SanityImage } from './SanityImage'
-import { FormatterProps } from '@/lib/typoraphyTypes'
+import { FormatterProps } from '@/lib/types/typoraphyTypes'
 import { cn } from '@/lib/utils'
 
 const textSerializers: PortableTextComponents = {

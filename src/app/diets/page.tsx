@@ -2,7 +2,7 @@ import DietsBanner from '@/pagesLayout/DietsPage/DietsBanner'
 import DietTitle from '@/pagesLayout/DietsPage/DietTitle'
 import DietImgDesc from '@/pagesLayout/DietsPage/DietImgDesc'
 import DietPriceBtn from '@/pagesLayout/DietsPage/DietPriceBtn'
-import { fetchStripeProducts } from '@/lib/fetchStripeProducts'
+import { fetchStripeProducts } from '@/lib/stripe/fetchStripeProducts'
 
 export default async function Diets() {
     const products = await fetchStripeProducts()

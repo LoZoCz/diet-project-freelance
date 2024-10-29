@@ -1,4 +1,4 @@
-import fetchAllPosts from '@/lib/fetchAllPosts'
+import fetchAllPosts from '@/lib/sanity-helpers/fetchAllPosts'
 import AboutBanner from '@/pagesLayout/BlogPage/BlogBanner'
 import BlogList from '@/pagesLayout/BlogPage/BlogList'
 

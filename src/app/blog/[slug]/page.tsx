@@ -4,8 +4,8 @@ import PostInfo from '@/pagesLayout/PostPage/PostInfo'
 import PostMainImage from '@/pagesLayout/PostPage/PostMainImage'
 import { H1 } from '@/components/custom/typography'
 import { Badge } from '@/components/ui/badge'
-import fetchSinglePost from '@/lib/fetchSinglePost'
-import { imagesUrl } from '@/lib/imagesUrl'
+import fetchSinglePost from '@/lib/sanity-helpers/fetchSinglePost'
+import { imagesUrl } from '@/lib/sanity-helpers/imagesUrl'
 
 export type PostPageProps = {
     params: {
@@ -13,9 +13,9 @@ export type PostPageProps = {
     }
 }
 
-export async function generateMetadata({ params }: { params: PostPageProps }) {
+export async function generateMetadata({ params }: PostPageProps) {
     try {
-        const post = await fetchSinglePost(params)
+        const post = await fetchSinglePost({ params })
 
         if (!post) {
             return {

@@ -1,43 +1,59 @@
 import { FC } from 'react'
 import { Tabs, TabsContent, TabsList, TabsTrigger } from '@/components/ui/tabs'
-import { H2, P } from '@/components/custom/typography'
-import { aboutContent } from '@/lib/defaultValues'
+import { H2 } from '@/components/custom/typography'
+import { BlockContent } from '@/sanity/types'
+import Formatter from '@/components/custom/Formatter'
 
-const OfferSection: FC = () => {
+type OfferProps = {
+    data: {
+        title?: string | null
+        items?: Array<{
+            name?: string | undefined
+            description?: BlockContent
+        }>
+    }
+}
+
+const OfferSection: FC<OfferProps> = ({ data }) => {
+    const defValue =
+        data.items && data.items[0].name?.toLowerCase().replace(/\s+/g, '-')
+
     return (
         <section className="container">
-            <H2 className="mb-4 text-3xl font-semibold">
-                {aboutContent.offer.title}
-            </H2>
+            <H2 className="mb-4 text-3xl font-semibold">{data.title}</H2>
             <Tabs
-                defaultValue={aboutContent.offer.first.value}
+                defaultValue={defValue || 'default'}
                 className="rounded-lg bg-white/50 shadow-md"
             >
-                <TabsList className="grid w-full grid-cols-2">
-                    {aboutContent.offer.tabs.map((tab, index) => (
-                        <TabsTrigger key={index} value={tab.value}>
-                            {tab.title}
-                        </TabsTrigger>
-                    ))}
+                <TabsList className="flex gap-2">
+                    {data.items &&
+                        data.items.map((tab, index) => (
+                            <TabsTrigger
+                                key={index}
+                                value={
+                                    tab.name?.toLowerCase().replace(' ', '-') ||
+                                    ''
+                                }
+                                className="flex-1"
+                            >
+                                {tab.name}
+                            </TabsTrigger>
+                        ))}
                 </TabsList>
-                <TabsContent
-                    value={aboutContent.offer.first.value}
-                    className="p-6"
-                >
-                    <P>{aboutContent.offer.first.content}</P>
-                </TabsContent>
-                <TabsContent
-                    value={aboutContent.offer.second.value}
-                    className="p-6"
-                >
-                    <div className="flex flex-wrap gap-2">
-                        {aboutContent.offer.second.content.map(
-                            (skill, index) => (
-                                <P key={index}>{skill}</P>
-                            )
-                        )}
-                    </div>
-                </TabsContent>
+                {data.items &&
+                    data.items.map((tab, index) => (
+                        <TabsContent
+                            key={index}
+                            value={
+                                tab.name?.toLowerCase().replace(' ', '-') || ''
+                            }
+                            className="p-6"
+                        >
+                            {tab.description && (
+                                <Formatter value={tab.description} />
+                            )}
+                        </TabsContent>
+                    ))}
             </Tabs>
         </section>
     )

@@ -1,5 +1,5 @@
-import { imagesUrl } from '@/lib/imagesUrl'
-import { imgAsset } from '@/lib/typoraphyTypes'
+import { imagesUrl } from '@/lib/sanity-helpers/imagesUrl'
+import { imgAsset } from '@/lib/types/typoraphyTypes'
 import Image from 'next/image'
 
 export const SanityImage = ({ image }: { image: imgAsset }) => {

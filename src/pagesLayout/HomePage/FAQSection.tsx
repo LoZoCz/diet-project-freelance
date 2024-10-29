@@ -6,20 +6,36 @@ import {
 } from '@/components/ui/accordion'
 import { FC } from 'react'
 import { H4 } from '@/components/custom/typography'
-import { homeContent } from '@/lib/defaultValues'
+import { BlockContent } from '@/sanity/types'
+import Formatter from '@/components/custom/Formatter'
 
-const FAQSection: FC = () => {
+type FaqProps = {
+    data: {
+        title: string | null
+        items: Array<{
+            question: string | undefined
+            answer: BlockContent | undefined
+        }>
+    }
+}
+
+const FAQSection: FC<FaqProps> = ({ data }) => {
     return (
         <section className="container space-y-6 px-4">
-            <H4 className="text-center text-5xl">{homeContent.faq.title}</H4>
+            <H4 className="text-center text-5xl">{data.title}</H4>
             <Accordion type="single" defaultValue="item-1" className="w-full">
-                {homeContent.faq.content.map((faq, id) => (
+                {data.items.map((item, id) => (
                     <AccordionItem value={`item-${id + 1}`} key={id}>
                         <AccordionTrigger className="text-center text-4xl tablet:text-left">
-                            {faq.title}
+                            {item.question}
                         </AccordionTrigger>
-                        <AccordionContent className="text-center text-lg tablet:text-left">
-                            {faq.content}
+                        <AccordionContent>
+                            {item.answer && (
+                                <Formatter
+                                    value={item.answer}
+                                    className="text-center text-lg tablet:text-left"
+                                />
+                            )}
                         </AccordionContent>
                     </AccordionItem>
                 ))}

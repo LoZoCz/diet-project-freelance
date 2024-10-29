@@ -8,7 +8,9 @@ const TermsSection: FC = () => {
         <div className="container mx-auto px-4 py-8">
             <Tabs defaultValue="terms" className="w-full">
                 <TabsList className="grid w-full grid-cols-2">
-                    <TabsTrigger value="terms">Regulamin główny</TabsTrigger>
+                    <TabsTrigger value="terms">
+                        Postanowienia ogólne
+                    </TabsTrigger>
                     <TabsTrigger value="privacy">Zasady RODO</TabsTrigger>
                 </TabsList>
                 <TermsServices />

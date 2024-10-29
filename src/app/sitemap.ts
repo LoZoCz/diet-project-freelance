@@ -1,4 +1,4 @@
-import fetchAllPosts from '@/lib/fetchAllPosts'
+import fetchAllPosts from '@/lib/sanity-helpers/fetchAllPosts'
 
 export default async function sitemap() {
     const baseUrl = 'https://www.dietabezcudow.pl'

@@ -19,25 +19,30 @@ const certifiactsImgs = [
     'certyfikat-9.jpg',
 ]
 
-const ImageCarousel: FC = () => {
+type CarouselProps = {
+    srcs: (string | undefined)[] | null
+}
+
+const ImageCarousel: FC<CarouselProps> = ({ srcs }) => {
     return (
         <Carousel className="px-0 tablet:px-7">
             <CarouselContent>
-                {certifiactsImgs.map((img, index) => (
-                    <CarouselItem className="basis-1/2" key={index}>
-                        <div className="">
-                            <div className="aspect-video w-full bg-primary">
-                                <Image
-                                    src={`/certyfikaty/${img}`}
-                                    alt={`Certificate ${index + 1}`}
-                                    width={1000}
-                                    height={700}
-                                    className="h-full w-full object-cover"
-                                />
+                {srcs &&
+                    srcs.map((src, index) => (
+                        <CarouselItem className="basis-1/2" key={index}>
+                            <div className="">
+                                <div className="aspect-video w-full bg-primary">
+                                    <Image
+                                        src={src || ''}
+                                        alt={`Certificate ${index + 1}`}
+                                        width={1000}
+                                        height={700}
+                                        className="h-full w-full object-cover"
+                                    />
+                                </div>
                             </div>
-                        </div>
-                    </CarouselItem>
-                ))}
+                        </CarouselItem>
+                    ))}
             </CarouselContent>
             <CarouselPrevious className="hidden tablet:flex" />
             <CarouselNext className="hidden tablet:flex" />

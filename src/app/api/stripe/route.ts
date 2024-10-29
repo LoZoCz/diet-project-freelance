@@ -1,7 +1,8 @@
 import { Resend } from 'resend'
 import Email from '@/email/Email'
 import { ReactElement } from 'react'
-import { stripe } from '@/lib/stripe'
+import { stripe } from '@/lib/stripe/stripe'
+import getFileURL from '@/lib/firebase/getFileURL'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -11,8 +12,6 @@ export const runtime = 'nodejs'
 
 export async function POST(req: Request) {
     try {
-        console.log('req.headers', req.headers)
-
         const sig = req.headers.get('stripe-signature') as string
         const rawBody = await req.text()
 
@@ -26,47 +25,42 @@ export async function POST(req: Request) {
             })
         }
 
-        console.log('event.type', JSON.stringify(event.type))
-
         if (event.type === 'checkout.session.completed') {
             const sessionWithLineItems =
                 await stripe.checkout.sessions.retrieve(
                     (event.data.object as any).id,
-                    {
-                        expand: ['line_items'],
-                    }
+                    { expand: ['line_items'] }
                 )
             const lineItems = sessionWithLineItems.line_items
 
             if (!lineItems)
-                return new Response('Internal Server Error', {
-                    status: 500,
-                })
+                return new Response('Internal Server Error', { status: 500 })
 
             try {
-                // Save the data, change customer account info, etc
-                console.log('Fullfill the order with custom logic')
-                console.log('data', lineItems.data)
-                console.log(
-                    'customer email',
-                    (event.data.object as any).customer_details.email
-                )
-                console.log('created', (event.data.object as any).created)
+                const productName = lineItems.data[0].description // Używamy nazwy pierwszego produktu
+                const downloadLink = await getFileURL(productName as string)
 
-                const { data, error } = await resend.emails.send({
+                if (!downloadLink) {
+                    throw new Error(
+                        'Nie znaleziono pliku do pobrania dla produktu'
+                    )
+                }
+
+                const customerEmail = (event.data.object as any)
+                    .customer_details.email
+
+                const { error } = await resend.emails.send({
                     from: 'email@dietabezcudow.pl',
-                    to: [(event.data.object as any).customer_details.email],
+                    to: [customerEmail],
                     subject: 'Twój zakupiony plan diety - DietaBezCudów',
-                    react: Email({}) as ReactElement,
+                    react: Email({ downloadLink }) as ReactElement, // Przekazujemy link do pliku do komponentu Email
                 })
 
                 if (error) {
-                    return console.error({ error })
+                    console.error('Błąd podczas wysyłania e-maila:', error)
                 }
-
-                console.log({ data })
             } catch (error) {
-                console.log("Handling when you're unable to save an order")
+                console.error('Błąd przy realizacji zamówienia:', error)
             }
         }
 
@@ -75,7 +69,7 @@ export async function POST(req: Request) {
             headers: { 'Content-Type': 'application/json' },
         })
     } catch (error) {
-        console.error(error)
+        console.error('Błąd wewnętrzny serwera:', error)
         return new Response('Internal Server Error', { status: 500 })
     }
 }

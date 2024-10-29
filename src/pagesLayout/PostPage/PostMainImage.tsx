@@ -1,4 +1,4 @@
-import { imagesUrl } from '@/lib/imagesUrl'
+import { imagesUrl } from '@/lib/sanity-helpers/imagesUrl'
 import { prefetchMainImage } from '@/sanity/customTypes'
 
 import Image from 'next/image'

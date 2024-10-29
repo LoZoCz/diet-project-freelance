@@ -8,7 +8,7 @@ import {
     ListProps,
     ParaProps,
     SmallProps,
-} from '@/lib/typoraphyTypes'
+} from '@/lib/types/typoraphyTypes'
 import { cn } from '@/lib/utils'
 import Link from 'next/link'
 
@@ -73,7 +73,7 @@ export function H4({ children, className, ...props }: HeadingProps) {
 export function P({ children, className, ...props }: ParaProps) {
     // somethign u can use in para: [&:not(:first-child)]:mt-6
     return (
-        <p {...props} className={cn('leading-7 text-foreground', className)}>
+        <p {...props} className={cn('leading-7', className)}>
             {children}
         </p>
     )

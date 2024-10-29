@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { imagesUrl } from '@/lib/imagesUrl'
+import { imagesUrl } from '@/lib/sanity-helpers/imagesUrl'
 import PostCard from './PostCard'
 import PostImage from './PostImage'
 import PostTitle from './PostTitle'

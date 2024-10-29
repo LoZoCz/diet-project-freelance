@@ -11,8 +11,13 @@ import {
     Link,
     Tailwind,
 } from '@react-email/components'
+import { FC } from 'react'
 
-export const Email: React.FC = () => {
+type EmailProps = {
+    downloadLink: string
+}
+
+export const Email: FC<EmailProps> = ({ downloadLink }) => {
     return (
         <Tailwind>
             <Html>
@@ -20,9 +25,9 @@ export const Email: React.FC = () => {
                 <Body className="bg-white font-sans">
                     <Container className="mx-auto max-w-xl p-4">
                         <Img
-                            src="https://fvjxvgvxhqpxvvbqhseo.supabase.co/storage/v1/object/public/logos/logo.png"
+                            src="https://firebasestorage.googleapis.com/v0/b/dietabezcudow-pdf.appspot.com/o/iconImage.png?alt=media&token=10a58834-040c-450e-878f-9620bfc08491"
                             alt="Logo DietaBezCudów"
-                            width="150"
+                            width="50"
                             height="50"
                             className="mx-auto mb-4"
                         />
@@ -39,9 +44,16 @@ export const Email: React.FC = () => {
                         </Text>
                         <Section className="my-6 rounded-lg bg-gray-100 p-4">
                             <Text className="m-0 text-base text-gray-800">
-                                Twoja dieta jest gotowa! Znajdziesz ją w
-                                załączniku do tego e-maila.
+                                Twoja dieta jest gotowa! Poniżej znajduje się
+                                link do pobrania diety.
                             </Text>
+                            <Link
+                                download
+                                href={downloadLink}
+                                className="mx-auto mt-3 block text-center text-lg text-primary underline"
+                            >
+                                Pobierz dietę
+                            </Link>
                         </Section>
                         <Heading
                             as="h2"

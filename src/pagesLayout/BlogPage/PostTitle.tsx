@@ -1,6 +1,6 @@
 import { FC, HTMLProps } from 'react'
 import { H2, P } from '@/components/custom/typography'
-import { dateToLocale } from '@/lib/dateToLocale'
+import { dateToLocale } from '@/lib/sanity-helpers/dateToLocale'
 
 type PostTitleProps = HTMLProps<HTMLDivElement> & {
     title: string | null

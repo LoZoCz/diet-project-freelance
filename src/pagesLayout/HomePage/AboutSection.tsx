@@ -1,31 +1,47 @@
 import { FC } from 'react'
 import { Button } from '../../components/ui/button'
-import { H4, P } from '@/components/custom/typography'
+import { H4 } from '@/components/custom/typography'
 import Image from 'next/image'
 import abousSecImg from '@/../public/about-sect-img.jpg'
 import Link from 'next/link'
-import { homeContent } from '@/lib/defaultValues'
+import { BlockContent } from '@/sanity/types'
+import Formatter from '@/components/custom/Formatter'
 
-const AboutSection: FC = () => {
+type AboutProps = {
+    data: {
+        title: string | null
+        paragraph: BlockContent | null
+        cta: string | null
+        image: string | undefined
+    }
+}
+
+const AboutSection: FC<AboutProps> = ({ data }) => {
     return (
         <section className="container flex flex-col items-center justify-center gap-12 px-4 tablet:flex-row">
             <div className="flex justify-center">
                 <Image
-                    src={abousSecImg}
+                    src={data.image || ''}
                     alt="about-section-image"
                     className="aspect-video size-full rounded-xl object-cover tablet:aspect-square"
+                    width={1400}
+                    height={1400}
                 />
             </div>
             <div className="space-y-8">
                 <H4 className="text-center text-5xl tablet:text-left">
-                    {homeContent.about.title}
+                    {data.title}
                 </H4>
-                <P className="text-center tablet:text-left">
-                    {homeContent.about.paragraph}
-                </P>
+
+                {data.paragraph && (
+                    <Formatter
+                        value={data.paragraph}
+                        className="text-center tablet:text-left"
+                    />
+                )}
                 <div className="flex items-center justify-center gap-4 laptop:items-start laptop:justify-start">
                     <Button className="text-xl" asChild>
-                        <Link href="/about">{homeContent.about.cta}</Link>
+                        <Link href="/about">{data.cta}</Link>
                     </Button>
                 </div>
             </div>
