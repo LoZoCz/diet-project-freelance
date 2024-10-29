@@ -1,6 +1,5 @@
 import { FC } from 'react'
-import { H2, P } from '@/components/custom/typography'
-import { calcContent } from '@/lib/defaultValues'
+import { H2 } from '@/components/custom/typography'
 import { BlockContent } from '@/sanity/types'
 import Formatter from '@/components/custom/Formatter'
 

@@ -1,5 +1,5 @@
 import { FC } from 'react'
-import { H1, P } from '@/components/custom/typography'
+import { H1 } from '@/components/custom/typography'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import { BlockContent } from '@/sanity/types'

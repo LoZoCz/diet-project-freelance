@@ -8,17 +8,6 @@ import {
 import Image from 'next/image'
 import { FC } from 'react'
 
-const certifiactsImgs = [
-    'certyfikat-1.jpg',
-    'certyfikat-3.jpg',
-    'certyfikat-4.jpg',
-    'certyfikat-5.jpg',
-    'certyfikat-6.jpg',
-    'certyfikat-7.jpg',
-    'certyfikat-8.jpg',
-    'certyfikat-9.jpg',
-]
-
 type CarouselProps = {
     srcs: (string | undefined)[] | null
 }
