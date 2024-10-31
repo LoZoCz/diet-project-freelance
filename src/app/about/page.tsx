@@ -8,6 +8,8 @@ import { client } from '@/sanity/client'
 import { notFound } from 'next/navigation'
 import { imagesUrl } from '@/lib/sanity-helpers/imagesUrl'
 
+const options = { next: { revalidate: 900 } }
+
 const ABOUT_QUERY = defineQuery(`*[_type=="aboutPage"][0] {
     aboutTitle,
     aboutImage,
@@ -21,7 +23,7 @@ const ABOUT_QUERY = defineQuery(`*[_type=="aboutPage"][0] {
 }`)
 
 export default async function About() {
-    const aboutData = await client.fetch(ABOUT_QUERY, {})
+    const aboutData = await client.fetch(ABOUT_QUERY, {}, options)
 
     if (!aboutData) notFound()
 

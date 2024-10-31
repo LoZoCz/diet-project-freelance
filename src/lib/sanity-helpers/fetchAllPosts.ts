@@ -1,7 +1,7 @@
 import { defineQuery } from 'next-sanity'
 import { client } from '@/sanity/client'
 
-const options = { next: { revalidate: 1800 } }
+const options = { next: { revalidate: 900 } }
 
 const BLOG_QUERY = defineQuery(`*[_type=="post"] {
     title,

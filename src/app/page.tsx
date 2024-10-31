@@ -7,6 +7,8 @@ import { client } from '@/sanity/client'
 import { defineQuery } from 'next-sanity'
 import { notFound } from 'next/navigation'
 
+const options = { next: { revalidate: 900 } }
+
 const HOME_QUERY = defineQuery(`*[_type=="homePage"][0] {
     heroTitle1,
     heroTitle2,
@@ -25,7 +27,7 @@ const HOME_QUERY = defineQuery(`*[_type=="homePage"][0] {
 }`)
 
 export default async function Home() {
-    const homeData = await client.fetch(HOME_QUERY, {})
+    const homeData = await client.fetch(HOME_QUERY, {}, options)
 
     if (!homeData) notFound()
 

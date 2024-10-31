@@ -6,6 +6,8 @@ import { client } from '@/sanity/client'
 import { defineQuery } from 'next-sanity'
 import { notFound } from 'next/navigation'
 
+const options = { next: { revalidate: 900 } }
+
 const CALC_QUERY = defineQuery(`*[_type=="calcPage"][0] {
     firstTitle,
     firstText,
@@ -18,7 +20,7 @@ const CALC_QUERY = defineQuery(`*[_type=="calcPage"][0] {
 }`)
 
 export default async function Calculator() {
-    const calcData = await client.fetch(CALC_QUERY, {})
+    const calcData = await client.fetch(CALC_QUERY, {}, options)
 
     if (!calcData) notFound()
 
