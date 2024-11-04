@@ -1,18 +1,13 @@
 import { getDownloadURL, ref } from 'firebase/storage'
 import { storage } from './storage'
+import simplifyText from '../simplifyText'
 
-// Function to retrieve the download link based on the product name
 async function getFileURL(productName: string): Promise<string | null> {
     try {
-        // Normalize product name to match the file naming convention in Firebase Storage
-        const normalizedProductName = productName
-            .toLowerCase()
-            .replace(/\s+/g, '-')
+        const normalizedProductName = simplifyText(productName)
 
-        // Create a reference to the file in Firebase Storage
-        const fileRef = ref(storage, `diets/${normalizedProductName}.docx`)
+        const fileRef = ref(storage, `diets/${normalizedProductName}.pdf`)
 
-        // Fetch the download URL
         const downloadURL = await getDownloadURL(fileRef)
         return downloadURL
     } catch (error) {

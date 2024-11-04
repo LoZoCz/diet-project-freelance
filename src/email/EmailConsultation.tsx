@@ -3,7 +3,6 @@ import {
     Head,
     Body,
     Container,
-    Section,
     Img,
     Heading,
     Text,
@@ -13,11 +12,7 @@ import {
 } from '@react-email/components'
 import { FC } from 'react'
 
-type EmailProps = {
-    downloadLink: string
-}
-
-export const Email: FC<EmailProps> = ({ downloadLink }) => {
+export const EmailConsultation: FC = () => {
     return (
         <Tailwind>
             <Html>
@@ -38,38 +33,28 @@ export const Email: FC<EmailProps> = ({ downloadLink }) => {
                             Drogi kliencie,
                         </Text>
                         <Text className="mb-4 text-base text-gray-800">
-                            Dziękujemy za zakup spersonalizowanej diety.
-                            Cieszymy się, że zdecydowałeś się postawić na
-                            zdrowie z naszą pomocą!
+                            Dziękujemy za zgłoszenie się na konsultację! Ciesze
+                            się, że chcesz podjąć kolejny krok w stronę zdrowego
+                            stylu życia z moją pomocą.
                         </Text>
-                        <Section className="my-6 rounded-lg bg-gray-100 p-4">
-                            <Text className="m-0 text-base text-gray-800">
-                                Twoja dieta jest gotowa! Poniżej znajduje się
-                                link do pobrania diety.
-                            </Text>
-                            <Link
-                                download
-                                href={downloadLink}
-                                className="mx-auto mt-3 block text-center text-lg text-primary underline"
-                            >
-                                Pobierz dietę
-                            </Link>
-                        </Section>
                         <Heading
                             as="h2"
                             className="mb-4 mt-8 border-b-2 border-gray-300 pb-2 text-xl font-semibold text-gray-700"
                         >
-                            Kilka porad na start:
+                            Przygotowanie do konsultacji:
                         </Heading>
                         <ul className="mb-6 list-disc pl-5">
                             <li className="mb-2 text-base text-gray-800">
-                                Pamiętaj o regularnym piciu wody
+                                Przygotuj listę pytań i wątpliwości dotyczących
+                                diety lub zdrowia
                             </li>
                             <li className="mb-2 text-base text-gray-800">
-                                Staraj się jeść posiłki o stałych porach
+                                Bądź gotowy do rozmowy w wyznaczonym czasie
+                                konsultacji
                             </li>
                             <li className="mb-2 text-base text-gray-800">
-                                W razie pytań, nie wahaj się z nami skontaktować
+                                Jeśli będziesz potrzebować dodatkowych
+                                informacji, skontaktuj się z nami wcześniej
                             </li>
                         </ul>
                         <Hr className="my-6 border-gray-300" />
@@ -92,4 +77,4 @@ export const Email: FC<EmailProps> = ({ downloadLink }) => {
     )
 }
 
-export default Email
+export default EmailConsultation

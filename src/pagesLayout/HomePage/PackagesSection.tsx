@@ -47,8 +47,8 @@ const PackagesSection: FC<PackagesProps> = ({ data }) => {
                             src={data.image || ''}
                             alt="about-section-image"
                             className="aspect-video size-full rounded-xl object-cover tablet:aspect-square"
-                            width={750}
-                            height={750}
+                            width={300}
+                            height={300}
                         />
                     </div>
                 </div>

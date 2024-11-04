@@ -1,17 +1,16 @@
 import Stripe from 'stripe'
 import { stripe } from './stripe'
+import simplifyText from '../simplifyText'
 
 async function createOrRetrievePaymentLink(
     product: Stripe.Product,
     priceId: string
 ) {
     try {
-        // Sprawdzamy, czy w metadanych produktu jest zapisany link płatności
         if (product.metadata.paymentLink) {
-            return product.metadata.paymentLink // Jeśli link istnieje, zwracamy go
+            return product.metadata.paymentLink
         }
 
-        // Jeśli link nie istnieje, tworzymy nowy
         const paymentLink = await stripe.paymentLinks.create({
             line_items: [
                 {
@@ -25,12 +24,11 @@ async function createOrRetrievePaymentLink(
                 type: 'hosted_confirmation',
                 hosted_confirmation: {
                     custom_message:
-                        'Dziękujemy za zakup! Twoja dieta została wysłana na podany adres e-mail.',
+                        'Dziękujemy za zakup! Wiadomość e-mail została wysłana na twój adres.',
                 },
             },
         })
 
-        // Zapisujemy link w metadanych produktu, aby ponownie go użyć
         await stripe.products.update(product.id, {
             metadata: { paymentLink: paymentLink.url },
         })
@@ -44,15 +42,16 @@ async function createOrRetrievePaymentLink(
 
 export async function fetchStripeProducts() {
     try {
-        const products = await stripe.products.list()
+        const products = await stripe.products.list({
+            limit: 100,
+        })
 
         const productDetails = await Promise.all(
             products.data.map(async (product: Stripe.Product) => {
-                // Sprawdzamy, czy product.default_price istnieje i jest stringiem
                 const defaultPriceId =
                     typeof product.default_price === 'string'
                         ? product.default_price
-                        : product.default_price?.id // Jeśli default_price jest obiektem, pobieramy jego ID
+                        : product.default_price?.id
 
                 if (!defaultPriceId) {
                     console.error(
@@ -63,10 +62,8 @@ export async function fetchStripeProducts() {
 
                 const price = await stripe.prices.retrieve(defaultPriceId)
 
-                // Sprawdzamy, czy price.unit_amount istnieje
-                const unitAmount = price.unit_amount ?? 0 // Ustawiamy 0, jeśli unit_amount jest null
+                const unitAmount = price.unit_amount ?? 0
 
-                // Tworzymy lub pobieramy istniejący link płatniczy
                 const paymentLinkUrl = await createOrRetrievePaymentLink(
                     product,
                     price.id
@@ -75,17 +72,19 @@ export async function fetchStripeProducts() {
                 return {
                     id: product.id,
                     name: product.name,
+                    simpleName: simplifyText(product.name),
                     description: product.description,
-                    image: product.images[0], // Pobieramy pierwsze zdjęcie z listy
-                    price: unitAmount / 100, // Przeliczamy cenę
+                    image: product.images[0],
+                    price: unitAmount / 100,
                     currency: price.currency,
-                    paymentLink: paymentLinkUrl, // Zwracamy link do płatności
+                    paymentLink: paymentLinkUrl,
                 }
             })
         )
 
-        // Filtrujemy potencjalne null values
-        return productDetails.filter((detail) => detail !== null)
+        const result = productDetails.filter((detail) => detail !== null)
+
+        return result
     } catch (error) {
         console.error('Error fetching products from Stripe:', error)
         throw error

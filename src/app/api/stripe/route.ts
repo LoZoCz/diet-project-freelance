@@ -1,8 +1,10 @@
 import { Resend } from 'resend'
-import Email from '@/email/Email'
-import { ReactElement } from 'react'
+import Email, { EmailDiet } from '@/email/EmailDiet'
+import React, { ReactElement } from 'react'
 import { stripe } from '@/lib/stripe/stripe'
 import getFileURL from '@/lib/firebase/getFileURL'
+import simplifyText from '@/lib/simplifyText'
+import EmailConsultation from '@/email/EmailConsultation'
 
 const resend = new Resend(process.env.RESEND_API_KEY)
 
@@ -37,27 +39,43 @@ export async function POST(req: Request) {
                 return new Response('Internal Server Error', { status: 500 })
 
             try {
-                const productName = lineItems.data[0].description // Używamy nazwy pierwszego produktu
-                const downloadLink = await getFileURL(productName as string)
-
-                if (!downloadLink) {
-                    throw new Error(
-                        'Nie znaleziono pliku do pobrania dla produktu'
-                    )
-                }
+                const productName = lineItems.data[0].description
+                const simpleText = simplifyText(productName as string)
 
                 const customerEmail = (event.data.object as any)
                     .customer_details.email
 
-                const { error } = await resend.emails.send({
-                    from: 'email@dietabezcudow.pl',
-                    to: [customerEmail],
-                    subject: 'Twój zakupiony plan diety - DietaBezCudów',
-                    react: Email({ downloadLink }) as ReactElement, // Przekazujemy link do pliku do komponentu Email
-                })
+                if (/konsultacja/i.test(simpleText)) {
+                    const { error } = await resend.emails.send({
+                        from: 'email@dietabezcudow.pl',
+                        to: [customerEmail],
+                        subject:
+                            'Twója konsultacja została zamówiona - DietaBezCudów',
+                        react: EmailConsultation({}) as ReactElement,
+                    })
 
-                if (error) {
-                    console.error('Błąd podczas wysyłania e-maila:', error)
+                    if (error) {
+                        console.error('Błąd podczas wysyłania e-maila:', error)
+                    }
+                } else {
+                    const downloadLink = await getFileURL(productName as string)
+
+                    if (!downloadLink) {
+                        throw new Error(
+                            'Nie znaleziono pliku do pobrania dla produktu'
+                        )
+                    }
+
+                    const { error } = await resend.emails.send({
+                        from: 'email@dietabezcudow.pl',
+                        to: [customerEmail],
+                        subject: 'Twój zakupiony plan diety - DietaBezCudów',
+                        react: EmailDiet({ downloadLink }) as ReactElement,
+                    })
+
+                    if (error) {
+                        console.error('Błąd podczas wysyłania e-maila:', error)
+                    }
                 }
             } catch (error) {
                 console.error('Błąd przy realizacji zamówienia:', error)
