@@ -62,7 +62,13 @@ export const EmailConsultation: FC = () => {
                             DietaBezCudów
                         </Text>
                         <Text className="mb-1 text-center text-sm text-gray-600">
-                            Tel: 733 793 555 | Email: dietabezcudow@o2.pl
+                            Tel: 733 793 555 | Email:{' '}
+                            <Link
+                                href="mailto:dietabezcudow@o2.pl"
+                                className="block text-center text-sm text-gray-700 underline"
+                            >
+                                dietabezcudow@o2.pl
+                            </Link>
                         </Text>
                         <Link
                             href="https://www.dietabezcudow.pl"
