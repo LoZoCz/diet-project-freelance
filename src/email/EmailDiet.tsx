@@ -38,9 +38,9 @@ export const EmailDiet: FC<EmailProps> = ({ downloadLink }) => {
                             Drogi kliencie,
                         </Text>
                         <Text className="mb-4 text-base text-gray-800">
-                            Dziękujemy za zakup spersonalizowanej diety.
-                            Cieszymy się, że zdecydowałeś się postawić na
-                            zdrowie z naszą pomocą!
+                            Dziękuje za zakup spersonalizowanej diety. Ciesze
+                            się, że zdecydowałeś się postawić na zdrowie z moją
+                            pomocą!
                         </Text>
                         <Section className="my-6 rounded-lg bg-gray-100 p-4">
                             <Text className="m-0 text-base text-gray-800">

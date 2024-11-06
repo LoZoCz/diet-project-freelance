@@ -27,7 +27,7 @@ export function H1({ children, className, ...props }: HeadingProps) {
 }
 
 export function H2({ children, className, ...props }: HeadingProps) {
-    // somethign u can use in H2: pb-2 border-b
+    // something you can use in H2: pb-2 border-b
 
     return (
         <h2
@@ -71,7 +71,7 @@ export function H4({ children, className, ...props }: HeadingProps) {
 }
 
 export function P({ children, className, ...props }: ParaProps) {
-    // somethign u can use in para: [&:not(:first-child)]:mt-6
+    // something you can use in para: [&:not(:first-child)]:mt-6
     return (
         <p {...props} className={cn('leading-7', className)}>
             {children}
@@ -80,7 +80,7 @@ export function P({ children, className, ...props }: ParaProps) {
 }
 
 export function List({ children, className, ...props }: ListProps) {
-    // somethign u can use in list: my-6 ml-6
+    // something you can use in list: my-6 ml-6
     return (
         <ul {...props} className="ml-6 list-disc [&>li]:mt-2">
             {children}
