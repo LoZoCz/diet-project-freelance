@@ -7,7 +7,10 @@ async function createOrRetrievePaymentLink(
     priceId: string
 ) {
     try {
-        if (product.metadata.paymentLink) {
+        if (
+            product.metadata.paymentLink &&
+            !product.metadata.paymentLink.includes('test')
+        ) {
             return product.metadata.paymentLink
         }
 
